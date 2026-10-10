@@ -1,6 +1,6 @@
 /** Configuration centrale du site (générée par new-site.py). */
-export const SITE_URL = "https://uk-benefits.example";
-export const SITE_NAMES: Record<string, string> = {"en": "Benefit Sums"};
+export const SITE_URL = "https://benefitscalc.co.uk";
+export const SITE_NAMES: Record<string, string> = {"en": "Benefits Calc"};
 export const LANG_TAGS: Record<string, string> = {"en": "en-GB"};
 export const OG_LOCALES: Record<string, string> = {"en": "en_GB"};
 export const LOCALE_TAG = 'en-GB';
@@ -11,12 +11,12 @@ export const SITE_FOUNDED = '2026';
 export const LAST_UPDATED = '2026-10-10';
 export const AUTHOR_NAME = 'Radif Partners';
 export const AUTHOR_ROLE: Record<string, string> = {"en": "Radif Partners"};
-export const AUTHOR_DESC: Record<string, string> = {"en": "Radif Partners builds Benefit Sums, a set of free calculators for people claiming in the United Kingdom: Universal Credit with the Local Housing Allowance of each rental area, Pension Credit with its savings credit, the PIP points test, Carer's Allowance and its £204 earnings limit, Child Benefit and the high income charge, State Pension age and amount, using the 2026/27 rates published by the DWP, HMRC, Social Security Scotland and nidirect."};
+export const AUTHOR_DESC: Record<string, string> = {"en": "Radif Partners builds Benefits Calc, a set of free calculators for people claiming in the United Kingdom: Universal Credit with the Local Housing Allowance of each rental area, Pension Credit with its savings credit, the PIP points test, Carer's Allowance and its £204 earnings limit, Child Benefit and the high income charge, State Pension age and amount, using the 2026/27 rates published by the DWP, HMRC, Social Security Scotland and nidirect."};
 /** Sujets sur lesquels l'editeur est competent (schema.org knowsAbout). Ce sont les
  *  themes reellement traites par le site, pas une liste de mots-cles : un sujet
  *  declare ici sans page qui le couvre est une declaration fausse. */
 export const KNOWS_ABOUT: Record<string, string[]> = {"en": ["Universal Credit", "Pension Credit", "Personal Independence Payment", "Carer's Allowance", "Child Benefit", "State Pension", "Housing Benefit", "Tax-Free Childcare"]};
-export const CONTACT_EMAIL = "contact@uk-benefits.example";
+export const CONTACT_EMAIL = "contact@benefitscalc.co.uk";
 export const THEME_COLOR = '#B0122C';
 export const LOGO_SYMBOL = 'UC';
 export const BING_VERIFY_CODE = '';
@@ -27,7 +27,7 @@ export const GOOGLE_VERIFY_CODE = '';
 export const CONSENT_MODE: 'opt-in' | 'notice' | 'none' = 'none';
 export const GA4_ID = '';
 /** Projet Microsoft Clarity (compte amradif), chargé sans cookie. Vide = aucune mesure. */
-export const CLARITY_ID = '';
+export const CLARITY_ID = 'yvjrbvlagp';
 export const INDEXNOW_KEY = '80407fc6a1d5c7fc74dcd41982555d4b';
 
 /* ------------------------------------------------------------------------- *

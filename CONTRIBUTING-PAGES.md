@@ -1,4 +1,4 @@
-# Ajouter une page à Benefit Sums (uk-benefits)
+# Ajouter une page à Benefits Calc (uk-benefits)
 
 Notice pour les agents qui écrivent ou prolongent le site. À lire en entier avant d'écrire une ligne, avec
 `~/Documents/GitHub/RECETTE-SITE.md` (§0, §6, §7, §9.3, §11, §17.4, §21, §26).

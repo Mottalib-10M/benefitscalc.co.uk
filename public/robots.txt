@@ -3,4 +3,4 @@ Allow: /
 
 Disallow: /*?*
 
-Sitemap: https://uk-benefits.example/sitemap-index.xml
+Sitemap: https://benefitscalc.co.uk/sitemap-index.xml

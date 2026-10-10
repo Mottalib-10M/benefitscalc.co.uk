@@ -1,6 +1,6 @@
 {
- "name": "Benefit Sums",
- "short_name": "Benefit Sums",
+ "name": "Benefits Calc",
+ "short_name": "Benefits Calc",
  "description": "UK benefits for 2026/27 worked out in a few fields: Universal Credit with your area's housing allowance, Pension Credit, PIP points, Carer's Allowance, Child Benefit, State Pension and childcare help.",
  "start_url": "/en/",
  "display": "standalone",
