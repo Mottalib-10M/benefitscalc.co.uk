@@ -1,0 +1,33 @@
+---
+/** The full calculator of a tool page, picked by `tool` in the page file. */
+import UcCalculator from './calc/UcCalculator';
+import BenefitsChecker from './calc/BenefitsChecker';
+import LhaTool from './calc/LhaTool';
+import PensionCreditCalculator from './calc/PensionCreditCalculator';
+import PipCalculator from './calc/PipCalculator';
+import CarersCalculator from './calc/CarersCalculator';
+import ChildBenefitCalculator from './calc/ChildBenefitCalculator';
+import SpaCalculator from './calc/SpaCalculator';
+import StatePensionCalculator from './calc/StatePensionCalculator';
+import TfcCalculator from './calc/TfcCalculator';
+import WinterFuelCalculator from './calc/WinterFuelCalculator';
+import HbCalculator from './calc/HbCalculator';
+import CapCalculator from './calc/CapCalculator';
+import { checkerLinks } from '../lib/guides';
+import type { ToolKind } from '../lib/guide-types';
+interface Props { kind: ToolKind; methodHref?: string }
+const { kind, methodHref } = Astro.props;
+---
+{kind === 'uc' && <UcCalculator client:load methodHref={methodHref} />}
+{kind === 'checker' && <BenefitsChecker client:load links={checkerLinks()} />}
+{kind === 'lha' && <LhaTool client:load methodHref={methodHref} />}
+{kind === 'pc' && <PensionCreditCalculator client:load methodHref={methodHref} />}
+{kind === 'pip' && <PipCalculator client:load methodHref={methodHref} />}
+{kind === 'carer' && <CarersCalculator client:load methodHref={methodHref} />}
+{kind === 'cb' && <ChildBenefitCalculator client:load methodHref={methodHref} />}
+{kind === 'spa' && <SpaCalculator client:load methodHref={methodHref} />}
+{kind === 'sp' && <StatePensionCalculator client:load methodHref={methodHref} />}
+{kind === 'tfc' && <TfcCalculator client:load methodHref={methodHref} />}
+{kind === 'wfp' && <WinterFuelCalculator client:load methodHref={methodHref} />}
+{kind === 'hb' && <HbCalculator client:load methodHref={methodHref} />}
+{kind === 'cap' && <CapCalculator client:load methodHref={methodHref} />}

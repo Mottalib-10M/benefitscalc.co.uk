@@ -1,0 +1,19 @@
+---
+/** Embeddable page (iframe): calculator only, no navigation. noindex, out of the sitemap (astro.config). */
+import '../../styles/global.css';
+import UcCalculator from '../../components/calc/UcCalculator';
+import { SITE_URL, SITE_NAMES } from '../../data/site-config';
+---
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Universal Credit calculator 2026/27 (widget)</title>
+    <meta name="robots" content="noindex" />
+    <link rel="canonical" href={`${SITE_URL}/en/universal-credit-calculator/`} />
+  </head>
+  <body class="bg-white p-2 text-navy-900">
+    <UcCalculator client:load compact={true} />
+    <p class="mt-2 text-center text-xs text-navy-600"><a href={`${SITE_URL}/en/universal-credit-calculator/`} target="_blank" rel="noopener" class="underline">{SITE_NAMES.en}</a> · worked out in your browser</p>
+  </body>
+</html>

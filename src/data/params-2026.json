@@ -1,0 +1,950 @@
+{
+ "_lisezmoi": "All 2026/27 benefit values of the site live here, never typed in a page (RECETTE §4). Each value was read at the source named in its block on retrieved_at. Weekly unless the key says monthly. Next review: April 2027 up-rating (DWP rates normally published in November).",
+ "year": 2026,
+ "taxYear": "2026/27",
+ "retrieved_at": "2026-10-10",
+ "valid_from": "2026-04-06",
+ "valid_to": "2027-04-05",
+ "upratingCPI": 0.038,
+ "uc": {
+  "_src": [
+   "dwpRates",
+   "govUc",
+   "ucRegs22"
+  ],
+  "monthly": true,
+  "standard": {
+   "singleUnder25": 338.58,
+   "single25": 424.9,
+   "coupleUnder25": 528.34,
+   "couple25": 666.97
+  },
+  "child": 303.94,
+  "firstChildPre2017Extra": 47.94,
+  "firstChildPre2017": 351.88,
+  "disabledChildLower": 164.79,
+  "disabledChildHigher": 514.71,
+  "lcwra": 429.8,
+  "lcwraNew2026": 217.26,
+  "lcwraReformDate": "2026-04-06",
+  "lcw": 158.76,
+  "carer": 209.34,
+  "childcareMax1": 1071.09,
+  "childcareMax2": 1836.16,
+  "childcareShare": 0.85,
+  "workAllowanceHigher": 710,
+  "workAllowanceLower": 427,
+  "taper": 0.55,
+  "nonDepDeduction": 96.55,
+  "capitalLower": 6000,
+  "capitalUpper": 16000,
+  "tariffPer250": 4.35,
+  "twoChildLimitEnded": "2026-04-06",
+  "minimumAward": 0.01,
+  "sanctionDaily100": {
+   "singleUnder25": 11.1,
+   "single25": 13.9
+  },
+  "maxDeductionShare": 0.15,
+  "maxDeduction": {
+   "singleUnder25": 50.79,
+   "single25": 63.74,
+   "coupleUnder25": 79.25,
+   "couple25": 100.05
+  },
+  "previous": {
+   "single25": 400.14,
+   "child": 292.81,
+   "carer": 201.68,
+   "lcwra": 423.27,
+   "workAllowanceHigher": 684,
+   "workAllowanceLower": 411
+  },
+  "aetSingle": 991,
+  "aetCouple": 1597,
+  "wcaEarningsThreshold": 881
+ },
+ "lha": {
+  "_src": [
+   "lhaUc",
+   "lhaVoa",
+   "ucRegsSch4"
+  ],
+  "sarAgeLimit": 35,
+  "socialSpareOne": 0.14,
+  "socialSpareTwo": 0.25,
+  "frozenSince": "2024-04-01"
+ },
+ "benefitCap": {
+  "_src": [
+   "dwpRates",
+   "govBenefitCap",
+   "nidCap"
+  ],
+  "annual": {
+   "londonFamily": 25323,
+   "londonSingle": 16967,
+   "restFamily": 22020,
+   "restSingle": 14753
+  },
+  "monthly": {
+   "londonFamily": 2110.25,
+   "londonSingle": 1413.92,
+   "restFamily": 1835.0,
+   "restSingle": 1229.42
+  },
+  "weekly": {
+   "londonFamily": 486.98,
+   "londonSingle": 326.29,
+   "restFamily": 423.46,
+   "restSingle": 283.71
+  },
+  "earningsExemptMonthly": 881,
+  "earningsExemptMonthlyPrev": 846,
+  "gracePeriodMonths": 9
+ },
+ "pensionCredit": {
+  "_src": [
+   "dwpRates",
+   "govPc",
+   "spcRegs7"
+  ],
+  "guaranteeSingle": 238.0,
+  "guaranteeCouple": 363.25,
+  "severeDisability": 86.05,
+  "severeDisabilityBoth": 172.1,
+  "carer": 48.15,
+  "child": 69.98,
+  "firstChildPre2017": 81.07,
+  "disabledChildLower": 37.93,
+  "disabledChildHigher": 118.46,
+  "savingsThresholdSingle": 208.07,
+  "savingsThresholdCouple": 329.75,
+  "savingsMaxSingle": 17.96,
+  "savingsMaxCouple": 20.1,
+  "savingsShareA": 0.6,
+  "savingsShareB": 0.4,
+  "savingsCreditSpaBefore": "2016-04-06",
+  "capitalDisregard": 10000,
+  "tariffPer500": 1,
+  "backdateMonths": 3,
+  "applyMonthsBefore": 4,
+  "previous": {
+   "guaranteeSingle": 227.1,
+   "guaranteeCouple": 346.6
+  }
+ },
+ "housingBenefit": {
+  "_src": [
+   "dwpRates",
+   "govHb",
+   "hbSpc51"
+  ],
+  "taper": 0.65,
+  "pensionAgeSingle": 256.0,
+  "pensionAgeCouple": 383.35,
+  "pensionAgeSingleAfter2021": 238.0,
+  "pensionAgeCoupleAfter2021": 363.25,
+  "workingAgeSingle25": 95.55,
+  "workingAgeCouple": 150.15,
+  "capitalUpper": 16000,
+  "capitalDisregardPension": 10000,
+  "nonDepNotWorking": 20.4,
+  "nonDepWorking": [
+   [
+    192,
+    20.4
+   ],
+   [
+    279,
+    46.85
+   ],
+   [
+    365,
+    64.35
+   ],
+   [
+    485,
+    105.2
+   ],
+   [
+    605,
+    119.85
+   ],
+   [
+    1000000000.0,
+    131.45
+   ]
+  ]
+ },
+ "pip": {
+  "_src": [
+   "dwpRates",
+   "govPip",
+   "pipSch1",
+   "pipRegs5"
+  ],
+  "dailyStandard": 76.7,
+  "dailyEnhanced": 114.6,
+  "mobilityStandard": 30.3,
+  "mobilityEnhanced": 80.0,
+  "thresholdStandard": 8,
+  "thresholdEnhanced": 12,
+  "paidEveryWeeks": 4,
+  "qualifyMonthsPast": 3,
+  "qualifyMonthsFuture": 9,
+  "previous": {
+   "dailyStandard": 73.9,
+   "dailyEnhanced": 110.4,
+   "mobilityStandard": 29.2,
+   "mobilityEnhanced": 77.05
+  }
+ },
+ "aa": {
+  "_src": [
+   "dwpRates",
+   "govAa"
+  ],
+  "lower": 76.7,
+  "higher": 114.6,
+  "needMonths": 6
+ },
+ "dla": {
+  "_src": [
+   "dwpRates",
+   "govDlaChild"
+  ],
+  "careLowest": 30.3,
+  "careMiddle": 76.7,
+  "careHighest": 114.6,
+  "mobilityLower": 30.3,
+  "mobilityHigher": 80.0
+ },
+ "carers": {
+  "_src": [
+   "dwpRates",
+   "govCa",
+   "govCaOverview"
+  ],
+  "allowance": 86.45,
+  "earningsLimit": 204.0,
+  "hoursPerWeek": 35,
+  "studyHoursLimit": 21,
+  "minAge": 16,
+  "pensionContribShare": 0.5,
+  "careCostsMaxShare": 0.5,
+  "previous": {
+   "allowance": 83.3,
+   "earningsLimit": 196.0
+  }
+ },
+ "childBenefit": {
+  "_src": [
+   "hmrcCbRates",
+   "govCb",
+   "govHicbc"
+  ],
+  "eldest": 27.05,
+  "additional": 17.9,
+  "hicbcThreshold": 60000,
+  "hicbcUpper": 80000,
+  "hicbcPerPct": 200,
+  "backdateMonths": 3,
+  "previous": {
+   "eldest": 26.05,
+   "additional": 17.25
+  }
+ },
+ "guardiansAllowance": {
+  "_src": [
+   "hmrcCbRates"
+  ],
+  "weekly": 22.95
+ },
+ "statePension": {
+  "_src": [
+   "dwpRates",
+   "govNewSp",
+   "govDefer"
+  ],
+  "newFull": 241.3,
+  "basicFull": 184.9,
+  "basicLower": 110.75,
+  "qualifyingYearsFull": 35,
+  "qualifyingYearsMin": 10,
+  "deferPct9Weeks": 0.01,
+  "deferMinWeeks": 9,
+  "tripleLockIncrease": 0.048,
+  "previous": {
+   "newFull": 230.25,
+   "basicFull": 176.45
+  },
+  "newScheme": {
+   "menBornFrom": "1951-04-06",
+   "womenBornFrom": "1953-04-06"
+  }
+ },
+ "spa": {
+  "_src": [
+   "spaTimetable",
+   "govSpa"
+  ],
+  "phase67": [
+   [
+    "1960-04-06",
+    "1960-05-05",
+    1
+   ],
+   [
+    "1960-05-06",
+    "1960-06-05",
+    2
+   ],
+   [
+    "1960-06-06",
+    "1960-07-05",
+    3
+   ],
+   [
+    "1960-07-06",
+    "1960-08-05",
+    4
+   ],
+   [
+    "1960-08-06",
+    "1960-09-05",
+    5
+   ],
+   [
+    "1960-09-06",
+    "1960-10-05",
+    6
+   ],
+   [
+    "1960-10-06",
+    "1960-11-05",
+    7
+   ],
+   [
+    "1960-11-06",
+    "1960-12-05",
+    8
+   ],
+   [
+    "1960-12-06",
+    "1961-01-05",
+    9
+   ],
+   [
+    "1961-01-06",
+    "1961-02-05",
+    10
+   ],
+   [
+    "1961-02-06",
+    "1961-03-05",
+    11
+   ]
+  ],
+  "phase68": [
+   [
+    "1977-04-06",
+    "1977-05-05",
+    "2044-05-06"
+   ],
+   [
+    "1977-05-06",
+    "1977-06-05",
+    "2044-07-06"
+   ],
+   [
+    "1977-06-06",
+    "1977-07-05",
+    "2044-09-06"
+   ],
+   [
+    "1977-07-06",
+    "1977-08-05",
+    "2044-11-06"
+   ],
+   [
+    "1977-08-06",
+    "1977-09-05",
+    "2045-01-06"
+   ],
+   [
+    "1977-09-06",
+    "1977-10-05",
+    "2045-03-06"
+   ],
+   [
+    "1977-10-06",
+    "1977-11-05",
+    "2045-05-06"
+   ],
+   [
+    "1977-11-06",
+    "1977-12-05",
+    "2045-07-06"
+   ],
+   [
+    "1977-12-06",
+    "1978-01-05",
+    "2045-09-06"
+   ],
+   [
+    "1978-01-06",
+    "1978-02-05",
+    "2045-11-06"
+   ],
+   [
+    "1978-02-06",
+    "1978-03-05",
+    "2046-01-06"
+   ],
+   [
+    "1978-03-06",
+    "1978-04-05",
+    "2046-03-06"
+   ]
+  ],
+  "age66From": "1954-10-06",
+  "age67From": "1961-03-06",
+  "age68From": "1978-04-06"
+ },
+ "winterFuel": {
+  "_src": [
+   "govWfp"
+  ],
+  "winter": "2026 to 2027",
+  "qualifyingWeekStart": "2026-09-21",
+  "qualifyingWeekEnd": "2026-09-27",
+  "bornOnOrBefore": "1960-06-27",
+  "olderBornBefore": "1946-09-28",
+  "base": 200,
+  "older": 300,
+  "sharedBase": 100,
+  "sharedOlder": 150,
+  "careHomeBase": 100,
+  "careHomeOlder": 150,
+  "incomeThreshold": 35000,
+  "claimDeadline": "2027-03-31"
+ },
+ "coldWeather": {
+  "_src": [
+   "govColdWeather"
+  ],
+  "payment": 25,
+  "from": "2026-11-01",
+  "to": "2027-03-31",
+  "days": 7
+ },
+ "scotland": {
+  "_src": [
+   "scotUprating",
+   "scotScp",
+   "scotCsp",
+   "scotPawhp"
+  ],
+  "childPayment": 28.2,
+  "childPaymentPrev": 27.15,
+  "carerSupport": 86.45,
+  "carerSupplement": 11.7,
+  "carerAdditionalPerson": 10.4,
+  "pawhp": [
+   105.55,
+   158.35,
+   211.15,
+   316.7
+  ],
+  "winterHeating": 62.0,
+  "childWinterHeating": 265.5,
+  "bsgPregnancyFirst": 796.65,
+  "bsgPregnancySubsequent": 398.35,
+  "bsgEarlyLearning": 331.95,
+  "bsgSchoolAge": 331.95,
+  "funeralSupport": 1327.75
+ },
+ "childcare": {
+  "_src": [
+   "govTfc",
+   "govFreeChildcare"
+  ],
+  "tfcTopUpRate": 0.25,
+  "tfcMaxQuarter": 500,
+  "tfcMaxQuarterDisabled": 1000,
+  "tfcMaxYear": 2000,
+  "tfcMaxYearDisabled": 4000,
+  "incomeCap": 100000,
+  "minEarnQuarter21": 2643.68,
+  "minEarnQuarter18": 2256.8,
+  "minEarnQuarterUnder18": 1664.0,
+  "freeHoursWorking": 30,
+  "freeHoursUniversal3to4": 15,
+  "weeksPerYear": 38,
+  "applyFromWeeks": 23,
+  "ucFreeChildcareIncomeLimit": 15400
+ },
+ "maternity": {
+  "_src": [
+   "dwpRates",
+   "govMa",
+   "govSsmg"
+  ],
+  "maStandard": 194.32,
+  "maLow": 27,
+  "maThreshold": 30,
+  "maWeeks": 39,
+  "maShare": 0.9,
+  "ssmg": 500
+ },
+ "schoolMeals": {
+  "_src": [
+   "govFsm"
+  ],
+  "ucIncomeLimitBefore": 7400,
+  "allUcFrom": "2026-09-01"
+ },
+ "budgetingLoan": {
+  "_src": [
+   "govBudgeting"
+  ],
+  "min": 100,
+  "single": 348,
+  "couple": 464,
+  "withChildBenefit": 812,
+  "savingsLimit": 1000,
+  "savingsLimit63": 2000
+ },
+ "bereavement": {
+  "_src": [
+   "dwpRates",
+   "govBereavement"
+  ],
+  "standardLump": 2500,
+  "standardMonthly": 100,
+  "higherLump": 3500,
+  "higherMonthly": 350,
+  "months": 18
+ },
+ "esaJsa": {
+  "_src": [
+   "dwpRates"
+  ],
+  "under25": 75.65,
+  "over25": 95.55,
+  "esaWra": 37.95,
+  "esaSupport": 50.35
+ },
+ "ssp": {
+  "_src": [
+   "dwpRates"
+  ],
+  "weekly": 123.25
+ },
+ "sources": {
+  "dwpRates": {
+   "url": "https://www.gov.uk/government/publications/benefit-and-pension-rates-2026-to-2027/proposed-benefit-and-pension-rates-2026-to-2027",
+   "label": {
+    "en": "DWP, Benefit and pension rates 2026 to 2027 (weekly rates unless stated; updated 16 February 2026)"
+   }
+  },
+  "wms2025": {
+   "url": "https://questions-statements.parliament.uk/written-statements/detail/2025-11-26/hcws1101",
+   "label": {
+    "en": "Written ministerial statement HCWS1101, Secretary of State for Work and Pensions, 26 November 2025 (benefit up-rating 2026/27)"
+   }
+  },
+  "govUc": {
+   "url": "https://www.gov.uk/universal-credit/what-youll-get",
+   "label": {
+    "en": "GOV.UK, Universal Credit: what you’ll get"
+   }
+  },
+  "govUcWages": {
+   "url": "https://www.gov.uk/universal-credit/how-your-wages-affect-your-payments",
+   "label": {
+    "en": "GOV.UK, Universal Credit: how your wages affect your payments"
+   }
+  },
+  "govUcPaid": {
+   "url": "https://www.gov.uk/universal-credit/how-youre-paid",
+   "label": {
+    "en": "GOV.UK, Universal Credit: how you’re paid"
+   }
+  },
+  "govUcEligibility": {
+   "url": "https://www.gov.uk/universal-credit/eligibility",
+   "label": {
+    "en": "GOV.UK, Universal Credit: eligibility"
+   }
+  },
+  "govUcChildren": {
+   "url": "https://www.gov.uk/guidance/universal-credit-if-you-have-children",
+   "label": {
+    "en": "GOV.UK, Universal Credit if you have children (2-child limit ended 6 April 2026; updated 22 April 2026)"
+   }
+  },
+  "ucRegs22": {
+   "url": "https://www.legislation.gov.uk/uksi/2013/376/regulation/22",
+   "label": {
+    "en": "Universal Credit Regulations 2013, regulation 22 (deduction of income and work allowance, 55%)"
+   }
+  },
+  "ucRegsSch4": {
+   "url": "https://www.legislation.gov.uk/uksi/2013/376/schedule/4",
+   "label": {
+    "en": "Universal Credit Regulations 2013, Schedule 4 (housing costs element for renters)"
+   }
+  },
+  "ucRegs36": {
+   "url": "https://www.legislation.gov.uk/uksi/2013/376/regulation/36",
+   "label": {
+    "en": "Universal Credit Regulations 2013, regulation 36 (amount of elements)"
+   }
+  },
+  "lhaUc": {
+   "url": "https://www.gov.uk/government/publications/universal-credit-local-housing-allowance-rates-2026-to-2027",
+   "label": {
+    "en": "DWP, Universal Credit Local Housing Allowance rates: 2026 to 2027 (published 8 April 2026)"
+   }
+  },
+  "lhaVoa": {
+   "url": "https://www.gov.uk/government/publications/local-housing-allowance-lha-rates-applicable-from-april-2026-to-march-2027",
+   "label": {
+    "en": "VOA, Local Housing Allowance (LHA) rates applicable from April 2026 to March 2027 (rates held at April 2024 levels)"
+   }
+  },
+  "govBenefitCap": {
+   "url": "https://www.gov.uk/benefit-cap",
+   "label": {
+    "en": "GOV.UK, Benefit cap (earnings threshold £881 a month from 1 April 2026)"
+   }
+  },
+  "govHb": {
+   "url": "https://www.gov.uk/housing-benefit",
+   "label": {
+    "en": "GOV.UK, Housing Benefit"
+   }
+  },
+  "hbSpc51": {
+   "url": "https://www.legislation.gov.uk/uksi/2006/214/regulation/51",
+   "label": {
+    "en": "Housing Benefit (Persons who have attained the qualifying age for state pension credit) Regulations 2006, regulation 51 (65% taper)"
+   }
+  },
+  "govPc": {
+   "url": "https://www.gov.uk/pension-credit/what-youll-get",
+   "label": {
+    "en": "GOV.UK, Pension Credit: what you’ll get"
+   }
+  },
+  "govPcElig": {
+   "url": "https://www.gov.uk/pension-credit/eligibility",
+   "label": {
+    "en": "GOV.UK, Pension Credit: eligibility"
+   }
+  },
+  "spca3": {
+   "url": "https://www.legislation.gov.uk/ukpga/2002/16/section/3",
+   "label": {
+    "en": "State Pension Credit Act 2002, section 3 (savings credit)"
+   }
+  },
+  "spcRegs7": {
+   "url": "https://www.legislation.gov.uk/uksi/2002/1792/regulation/7",
+   "label": {
+    "en": "State Pension Credit Regulations 2002, regulation 7 (savings credit: 60% and 40%, thresholds £208.07 and £329.75)"
+   }
+  },
+  "govPip": {
+   "url": "https://www.gov.uk/pip/how-much-youll-get",
+   "label": {
+    "en": "GOV.UK, Personal Independence Payment: how much you’ll get"
+   }
+  },
+  "govPipElig": {
+   "url": "https://www.gov.uk/pip/eligibility",
+   "label": {
+    "en": "GOV.UK, Personal Independence Payment: eligibility"
+   }
+  },
+  "pipSch1": {
+   "url": "https://www.legislation.gov.uk/uksi/2013/377/schedule/1",
+   "label": {
+    "en": "Social Security (Personal Independence Payment) Regulations 2013, Schedule 1 (activities, descriptors and points)"
+   }
+  },
+  "pipRegs5": {
+   "url": "https://www.legislation.gov.uk/uksi/2013/377/regulation/5",
+   "label": {
+    "en": "Social Security (Personal Independence Payment) Regulations 2013, regulations 5 and 6 (8 and 12 point thresholds)"
+   }
+  },
+  "govAa": {
+   "url": "https://www.gov.uk/attendance-allowance/what-youll-get",
+   "label": {
+    "en": "GOV.UK, Attendance Allowance: what you’ll get"
+   }
+  },
+  "govDlaChild": {
+   "url": "https://www.gov.uk/disability-living-allowance-children",
+   "label": {
+    "en": "GOV.UK, Disability Living Allowance (DLA) for children"
+   }
+  },
+  "govCa": {
+   "url": "https://www.gov.uk/carers-allowance/eligibility",
+   "label": {
+    "en": "GOV.UK, Carer’s Allowance: eligibility (earnings limit £204 a week)"
+   }
+  },
+  "govCaOverview": {
+   "url": "https://www.gov.uk/carers-allowance",
+   "label": {
+    "en": "GOV.UK, Carer’s Allowance (£86.45 a week)"
+   }
+  },
+  "govCarersCredit": {
+   "url": "https://www.gov.uk/carers-credit",
+   "label": {
+    "en": "GOV.UK, Carer’s Credit"
+   }
+  },
+  "govCb": {
+   "url": "https://www.gov.uk/child-benefit/what-youll-get",
+   "label": {
+    "en": "GOV.UK, Child Benefit: what you’ll get"
+   }
+  },
+  "hmrcCbRates": {
+   "url": "https://www.gov.uk/government/publications/rates-and-allowances-tax-credits-child-benefit-and-guardians-allowance/tax-credits-child-benefit-and-guardians-allowance",
+   "label": {
+    "en": "HMRC, Child Benefit, Guardian’s Allowance and tax credits: rates and allowances (updated 9 March 2026)"
+   }
+  },
+  "govHicbc": {
+   "url": "https://www.gov.uk/child-benefit-tax-charge",
+   "label": {
+    "en": "GOV.UK, High Income Child Benefit Charge"
+   }
+  },
+  "govGuardian": {
+   "url": "https://www.gov.uk/guardians-allowance",
+   "label": {
+    "en": "GOV.UK, Guardian’s Allowance"
+   }
+  },
+  "govNewSp": {
+   "url": "https://www.gov.uk/new-state-pension/what-youll-get",
+   "label": {
+    "en": "GOV.UK, The new State Pension: what you’ll get"
+   }
+  },
+  "govDefer": {
+   "url": "https://www.gov.uk/deferring-state-pension",
+   "label": {
+    "en": "GOV.UK, Delay (defer) your State Pension"
+   }
+  },
+  "spaTimetable": {
+   "url": "https://www.gov.uk/government/publications/state-pension-age-timetable/state-pension-age-timetable",
+   "label": {
+    "en": "DWP, State Pension age timetable (Pensions Acts 1995, 2007, 2011 and 2014)"
+   }
+  },
+  "govSpa": {
+   "url": "https://www.gov.uk/state-pension-age",
+   "label": {
+    "en": "GOV.UK, Check your State Pension age"
+   }
+  },
+  "govForecast": {
+   "url": "https://www.gov.uk/check-state-pension",
+   "label": {
+    "en": "GOV.UK, Check your State Pension forecast"
+   }
+  },
+  "govWfp": {
+   "url": "https://www.gov.uk/winter-fuel-payment",
+   "label": {
+    "en": "GOV.UK, Winter Fuel Payment (winter 2026 to 2027)"
+   }
+  },
+  "govColdWeather": {
+   "url": "https://www.gov.uk/cold-weather-payment",
+   "label": {
+    "en": "GOV.UK, Cold Weather Payment (1 November 2026 to 31 March 2027)"
+   }
+  },
+  "govTfc": {
+   "url": "https://www.gov.uk/tax-free-childcare",
+   "label": {
+    "en": "GOV.UK, Tax-Free Childcare"
+   }
+  },
+  "govFreeChildcare": {
+   "url": "https://www.gov.uk/free-childcare-if-working",
+   "label": {
+    "en": "GOV.UK, Free childcare if you’re working (England)"
+   }
+  },
+  "govUcChildcare": {
+   "url": "https://www.gov.uk/help-with-childcare-costs/universal-credit",
+   "label": {
+    "en": "GOV.UK, Help with childcare costs: Universal Credit"
+   }
+  },
+  "govSsmg": {
+   "url": "https://www.gov.uk/sure-start-maternity-grant",
+   "label": {
+    "en": "GOV.UK, Sure Start Maternity Grant"
+   }
+  },
+  "govMa": {
+   "url": "https://www.gov.uk/maternity-allowance/how-much-you-can-get",
+   "label": {
+    "en": "GOV.UK, Maternity Allowance: how much you can get"
+   }
+  },
+  "govFsm": {
+   "url": "https://www.gov.uk/apply-free-school-meals",
+   "label": {
+    "en": "GOV.UK, Apply for free school meals (England)"
+   }
+  },
+  "govBudgeting": {
+   "url": "https://www.gov.uk/budgeting-help-benefits",
+   "label": {
+    "en": "GOV.UK, Budgeting Loans"
+   }
+  },
+  "govCostOfLiving": {
+   "url": "https://www.gov.uk/guidance/cost-of-living-payment",
+   "label": {
+    "en": "GOV.UK, Cost of Living Payments (DWP is not planning any more; updated 1 April 2026)"
+   }
+  },
+  "govCrf": {
+   "url": "https://www.gov.uk/government/publications/crisis-and-resilience-fund-guidance-for-local-authorities-in-england-1-april-2026-to-31-march-2029",
+   "label": {
+    "en": "DWP, Crisis and Resilience Fund (England, 1 April 2026 to 31 March 2029)"
+   }
+  },
+  "govBereavement": {
+   "url": "https://www.gov.uk/bereavement-support-payment",
+   "label": {
+    "en": "GOV.UK, Bereavement Support Payment"
+   }
+  },
+  "scotUprating": {
+   "url": "https://www.gov.scot/publications/social-security-assistance-scotland-up-rating-inflation-2026-27/",
+   "label": {
+    "en": "Scottish Government, Social Security Assistance in Scotland: up-rating for inflation in 2026-2027 (published 2 February 2026)"
+   }
+  },
+  "scotScp": {
+   "url": "https://www.mygov.scot/scottish-child-payment",
+   "label": {
+    "en": "mygov.scot (Social Security Scotland), Scottish Child Payment"
+   }
+  },
+  "scotAdp": {
+   "url": "https://www.mygov.scot/adult-disability-payment",
+   "label": {
+    "en": "mygov.scot (Social Security Scotland), Adult Disability Payment"
+   }
+  },
+  "scotPadp": {
+   "url": "https://www.mygov.scot/pension-age-disability-payment",
+   "label": {
+    "en": "mygov.scot (Social Security Scotland), Pension Age Disability Payment"
+   }
+  },
+  "scotCsp": {
+   "url": "https://www.mygov.scot/carer-support-payment",
+   "label": {
+    "en": "mygov.scot (Social Security Scotland), Carer Support Payment, Scottish Carer Supplement and Carer Additional Person Payment (updated 5 April 2026)"
+   }
+  },
+  "scotPawhp": {
+   "url": "https://www.mygov.scot/pension-age-winter-heating-payment",
+   "label": {
+    "en": "mygov.scot (Social Security Scotland), Pension Age Winter Heating Payment"
+   }
+  },
+  "scotWhp": {
+   "url": "https://www.mygov.scot/winter-heating-payment",
+   "label": {
+    "en": "mygov.scot (Social Security Scotland), Winter Heating Payment (updated 20 February 2026)"
+   }
+  },
+  "scotCwhp": {
+   "url": "https://www.mygov.scot/child-winter-heating-payment",
+   "label": {
+    "en": "mygov.scot (Social Security Scotland), Child Winter Heating Payment (updated 10 August 2026)"
+   }
+  },
+  "scotBsg": {
+   "url": "https://www.mygov.scot/best-start-grant-best-start-foods",
+   "label": {
+    "en": "mygov.scot (Social Security Scotland), Best Start Grant and Best Start Foods"
+   }
+  },
+  "nidCap": {
+   "url": "https://www.nidirect.gov.uk/articles/benefit-cap",
+   "label": {
+    "en": "nidirect, The Benefit Cap (Northern Ireland)"
+   }
+  },
+  "nidWelfare": {
+   "url": "https://www.nidirect.gov.uk/articles/support-if-youre-affected-welfare-changes",
+   "label": {
+    "en": "nidirect, Support if you’re affected by welfare changes (Welfare Supplementary Payments)"
+   }
+  },
+  "nidUcHousing": {
+   "url": "https://www.nidirect.gov.uk/articles/universal-credit-payments-housing",
+   "label": {
+    "en": "nidirect, Universal Credit payments for housing (Northern Ireland)"
+   }
+  },
+  "nidTwoChild": {
+   "url": "https://www.nidirect.gov.uk/articles/universal-credit-two-child-limit",
+   "label": {
+    "en": "nidirect, Universal Credit: two child limit (ended 6 April 2026)"
+   }
+  },
+  "nidCa": {
+   "url": "https://www.nidirect.gov.uk/articles/carers-allowance",
+   "label": {
+    "en": "nidirect, Carer’s Allowance (Northern Ireland)"
+   }
+  },
+  "nidAa": {
+   "url": "https://www.nidirect.gov.uk/articles/attendance-allowance",
+   "label": {
+    "en": "nidirect, Attendance Allowance (Northern Ireland)"
+   }
+  },
+  "nidPc": {
+   "url": "https://www.nidirect.gov.uk/articles/applying-pension-credit",
+   "label": {
+    "en": "nidirect, Applying for Pension Credit (Northern Ireland)"
+   }
+  },
+  "govUcHealth": {
+   "url": "https://www.gov.uk/health-conditions-disability-universal-credit",
+   "label": {
+    "en": "GOV.UK, Health conditions, disability and Universal Credit"
+   }
+  }
+ },
+ "carersCredit": {
+  "_src": [
+   "govCarersCredit"
+  ],
+  "hoursPerWeek": 20,
+  "breakWeeks": 12
+ }
+}

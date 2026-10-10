@@ -1,0 +1,37 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { route } from '../../i18n/routes';
+import { P } from '../../lib/engine/params';
+import { formatMoney, displayDate } from '../../lib/format';
+import { breadcrumbSchema, webPageSchema } from '../../lib/seo';
+const lang = 'en';
+const g = (n: number, d = 2) => formatMoney(n, d);
+const date = (iso: string) => displayDate(iso, 'en-GB');
+const s = (k: keyof typeof P.sources, text?: string) => `<a href="${P.sources[k].url}" target="_blank" rel="nofollow noopener noreferrer">${text ?? P.sources[k].label.en}</a>`;
+const U = P.uc;
+const title = 'Benefit Calculations 2026/27: Method, Sources and Limits';
+const description = 'How Benefit Sums works out Universal Credit, Pension Credit, PIP, Carer’s Allowance and Child Benefit for 2026/27: the rule behind each step, the sources and what is left out.';
+const path = route('method', lang);
+const html = `
+<p>Each calculator turns a regulation into arithmetic. This page names the regulation, the order of the steps, the rounding and what is not modelled. All rates sit in one parameter file read on ${date(P.retrieved_at)}; the Local Housing Allowance figures in a second file rebuilt by a script from the DWP download.</p>
+<h2>Universal Credit</h2>
+<p>The maximum amount is the sum of the standard allowance and the elements in ${s('ucRegs36', 'regulation 36 of the Universal Credit Regulations 2013')}, at the monthly rates of the ${s('dwpRates', 'DWP 2026/27 table')}: ${g(U.standard.single25)} for a single claimant aged 25 or over, ${g(U.child)} per child with no two-child limit since ${date(U.twoChildLimitEnded)} (${s('govUcChildren', 'GOV.UK')}), ${g(U.lcwra)} or ${g(U.lcwraNew2026)} for limited capability for work-related activity depending on when the health condition was reported, ${g(U.carer)} for a carer, 85% of childcare up to ${g(U.childcareMax1)} or ${g(U.childcareMax2)}. A claimant with the health element does not also receive the carer element.</p>
+<p>Housing costs follow ${s('ucRegsSch4', 'Schedule 4')}: private rent limited to the ${s('lhaUc', 'Local Housing Allowance of the Broad Rental Market Area')} for the bedroom category, with the shared accommodation rate for a single person under 35 without children unless an exemption applies; social rent reduced by 14% for one spare bedroom and 25% for two or more; ${g(U.nonDepDeduction)} taken off for each non-dependant adult unless exempt. The bedroom category is suggested from the household (children paired two to a room) and can be overridden.</p>
+<p>Deductions follow ${s('ucRegs22', 'regulation 22')}: 55% of monthly earnings above the work allowance (${g(U.workAllowanceLower, 0)} with housing costs, ${g(U.workAllowanceHigher, 0)} without, and none unless the household has a child or limited capability for work); unearned income such as Carer’s Allowance in full; ${g(U.tariffPer250)} of assumed income for each £250 or part of £250 of capital between ${g(U.capitalLower, 0)} and ${g(U.capitalUpper, 0)}, and no award above. The benefit cap (${s('govBenefitCap', 'GOV.UK')}) is applied last unless the household earns ${g(P.benefitCap.earningsExemptMonthly, 0)} a month or receives a benefit that exempts it.</p>
+<p>Not modelled: the minimum income floor for the self-employed, transitional protection after a managed move, advances and debt repayments, sanctions, the surplus earnings rule, student income and mixed-age couples’ details. Earnings are taken as entered for one assessment period.</p>
+<h2>Pension Credit and Housing Benefit at pension age</h2>
+<p>Guarantee credit is the appropriate amount (${g(P.pensionCredit.guaranteeSingle)} single, ${g(P.pensionCredit.guaranteeCouple)} couple, plus the additions for severe disability, carers, children and housing costs) less weekly income, savings above ${g(P.pensionCredit.capitalDisregard, 0)} counting as £1 for every £500 or part of £500. Savings credit applies ${s('spca3', 'section 3 of the State Pension Credit Act 2002')} with the percentages and thresholds of ${s('spcRegs7', 'regulation 7')}: 60% of qualifying income above ${g(P.pensionCredit.savingsThresholdSingle)} (couple ${g(P.pensionCredit.savingsThresholdCouple)}), capped at ${g(P.pensionCredit.savingsMaxSingle)} (${g(P.pensionCredit.savingsMaxCouple)}), less 40% of income above the appropriate amount. Housing Benefit at pension age deducts 65% of income above the applicable amount from the eligible rent (${s('hbSpc51', 'regulation 51 of SI 2006/214')}); Guarantee Credit gives the maximum.</p>
+<h2>PIP</h2>
+<p>The points calculator lists the 12 activities and their descriptors from ${s('pipSch1', 'Schedule 1 of the PIP Regulations 2013')}, with the wording shortened where it repeats but the points unchanged. Each component pays the standard rate from 8 points and the enhanced rate from 12 (${s('pipRegs5', 'regulations 5 and 6')}). It cannot apply the reliability test (safely, to an acceptable standard, repeatedly, in a reasonable time) or the more-than-half-the-days rule: those are judgements for the assessor.</p>
+<h2>Carer’s Allowance, Child Benefit and childcare</h2>
+<p>Carer’s Allowance counts weekly earnings after tax and National Insurance, less half of pension contributions, care costs up to half of earnings and other allowable expenses, against the ${g(P.carers.earningsLimit)} limit (${s('govCa', 'GOV.UK eligibility')}). With a State Pension, only the difference is paid. Child Benefit is ${g(P.childBenefit.eldest)} plus ${g(P.childBenefit.additional)} per other child (${s('hmrcCbRates', 'HMRC')}); the High Income Child Benefit Charge is 1% for each £200 of adjusted net income above ${g(P.childBenefit.hicbcThreshold, 0)}, counted in complete steps of £200 here. Tax-Free Childcare adds 20% of the bill (£2 per £8 paid in), up to ${g(P.childcare.tfcMaxQuarter, 0)} a quarter per child or ${g(P.childcare.tfcMaxQuarterDisabled, 0)} if disabled (${s('govTfc', 'GOV.UK')}).</p>
+<h2>State Pension</h2>
+<p>State Pension age follows the ${s('spaTimetable', 'DWP timetable')}, including the month-by-month rise from 66 to 67 for people born between 6 April 1960 and 5 March 1961, checked against its three worked examples. The amount calculator applies 1/35 of ${g(P.statePension.newFull)} per qualifying year with a 10-year minimum, valid for records that start after April 2016; deferral adds 1% for every 9 weeks (${s('govDefer', 'GOV.UK')}), which is 5.78% over 52 weeks where GOV.UK rounds to 5.8%.</p>
+<h2>Tests and updates</h2>
+<p>Automated tests run before every build: the GOV.UK worked examples (savings of £11,000 counting as £2, the £250 childcare bill, the £100 carer earnings with £60 care costs, the State Pension age dates), and the bounds of each rule. Rates are reviewed each April and when DWP, HMRC, Social Security Scotland or the Department for Communities announce a change. A confirmed error is corrected, dated and turned into a test.</p>
+`;
+---
+<PageLayout title={title} description={description} lang={lang} jsonLd={[webPageSchema({ name: 'How we calculate', description, path, lang }), breadcrumbSchema([{ name: 'Home', path: route('home', lang) }, { name: 'How we calculate', path }])]} breadcrumbs={[{ label: 'How we calculate' }]}>
+  <header class="mb-6"><p class="kicker">Method</p><h1 class="mt-1 text-3xl font-bold text-navy-900 md:text-4xl">How each benefit is calculated, and what is left out</h1></header>
+  <div class="prose prose-slate max-w-none"><Fragment set:html={html} /></div>
+</PageLayout>

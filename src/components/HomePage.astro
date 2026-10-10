@@ -1,0 +1,119 @@
+---
+/**
+ * Home page (pillar). Layout built for benefits (RECETTE §6.6 rule 2): the household checker first,
+ * then a strip of headline rates, the "if this is you" accordions by life situation, the four nations
+ * compared, the April 2026 changes as a dated list, the reason this site exists, then the long text.
+ * Text in src/content/home.ts.
+ */
+import PageLayout from '../layouts/PageLayout.astro';
+import Clamp from './Clamp.astro';
+import BenefitsChecker from './calc/BenefitsChecker';
+import { HOME } from '../content/home';
+import { route } from '../i18n/routes';
+import { PAGES, checkerLinks } from '../lib/guides';
+import { helpers } from '../lib/helpers';
+import { P, type SourceKey } from '../lib/engine/params';
+import { formatMoney, displayDate } from '../lib/format';
+import { faqSchema, organizationSchema, websiteSchema, webPageSchema, webApplicationSchema } from '../lib/seo';
+import { LAST_UPDATED } from '../data/site-config';
+const lang = 'en';
+const x = HOME;
+const h = helpers();
+const path = route('home', lang);
+const keys: SourceKey[] = ['dwpRates', 'hmrcCbRates', 'lhaUc', 'govUc', 'govUcChildren', 'ucRegs22', 'pipSch1', 'spcRegs7', 'govWfp', 'scotUprating', 'nidTwoChild', 'nidWelfare'];
+const sources = keys.map((k) => ({ name: P.sources[k].label.en, url: P.sources[k].url }));
+const jsonLd = [websiteSchema(lang), organizationSchema(lang), webPageSchema({ name: x.h1, description: x.description, path, lang }), webApplicationSchema({ name: 'UK benefits checker 2026/27', description: x.description, path, lang }), faqSchema(x.faqs, lang)];
+const g = (n: number, d = 2) => formatMoney(n, d);
+const date = (iso: string) => displayDate(iso, 'en-GB');
+const has = (id: string) => PAGES.some((p) => p.id === id);
+const href = (id: string) => (has(id) ? route(id, lang) : undefined);
+const strip: Array<[string, string, string]> = [
+  ['Universal Credit, single 25+', `${g(P.uc.standard.single25)}`, 'a month'],
+  ['Pension Credit, single', `${g(P.pensionCredit.guaranteeSingle)}`, 'a week'],
+  ['New State Pension', `${g(P.statePension.newFull)}`, 'a week'],
+  ['PIP, both parts enhanced', `${g(P.pip.dailyEnhanced + P.pip.mobilityEnhanced)}`, 'a week'],
+  ['Carer’s Allowance', `${g(P.carers.allowance)}`, 'a week'],
+  ['Child Benefit, eldest child', `${g(P.childBenefit.eldest)}`, 'a week'],
+];
+const situations: Array<{ title: string; lead: string; ids: string[] }> = [
+  { title: 'You are working but your pay does not stretch', lead: `Universal Credit tops up low pay: 55p is withdrawn per pound earned, after a work allowance of ${g(P.uc.workAllowanceLower, 0)} or ${g(P.uc.workAllowanceHigher, 0)} if you have children.`, ids: ['universal-credit-calculator', 'universal-credit-work-allowance', 'universal-credit-payment-dates', 'universal-credit-childcare-costs'] },
+  { title: 'You rent your home', lead: 'Private rent is capped at the Local Housing Allowance of your area; social rent loses 14% or 25% for spare bedrooms.', ids: ['local-housing-allowance-rates', 'universal-credit-housing-element', 'bedroom-tax', 'housing-benefit', 'benefit-cap-calculator'] },
+  { title: 'You have a disability or long-term condition', lead: `PIP is scored on 12 activities and pays up to ${g(P.pip.dailyEnhanced + P.pip.mobilityEnhanced)} a week, in or out of work.`, ids: ['pip-points-calculator', 'pip-rates', 'pip-eligibility', 'universal-credit-health-element', 'attendance-allowance'] },
+  { title: 'You look after someone', lead: `Carer’s Allowance pays ${g(P.carers.allowance)} a week if you care 35 hours and earn up to ${g(P.carers.earningsLimit)} after deductions.`, ids: ['carers-allowance-calculator', 'carers-allowance', 'carers-allowance-and-universal-credit', 'carers-credit'] },
+  { title: 'You are expecting a baby or bringing up children', lead: `Child Benefit for every child, the Universal Credit child element of ${g(P.uc.child)} a month for each one, and help with childcare.`, ids: ['child-benefit-calculator', 'high-income-child-benefit-charge', 'tax-free-childcare-calculator', '30-hours-free-childcare', 'sure-start-maternity-grant', 'maternity-allowance'] },
+  { title: 'You are at or near State Pension age', lead: `Pension Credit lifts weekly income to ${g(P.pensionCredit.guaranteeSingle)} and opens the door to Housing Benefit, Council Tax Reduction and help with heating.`, ids: ['pension-credit-calculator', 'state-pension-age-calculator', 'state-pension-amount', 'winter-fuel-payment', 'housing-benefit-calculator'] },
+];
+const nations: Array<[string, string, string, string, string]> = [
+  ['Disability, working age', 'PIP (DWP)', 'Adult Disability Payment', 'PIP (DWP)', 'PIP (Department for Communities)'],
+  ['Disability, pension age', 'Attendance Allowance', 'Pension Age Disability Payment', 'Attendance Allowance', 'Attendance Allowance'],
+  ['Carers', `Carer’s Allowance ${g(P.carers.allowance)}`, `Carer Support Payment ${g(P.scotland.carerSupport)} + ${g(P.scotland.carerSupplement)} supplement`, `Carer’s Allowance ${g(P.carers.allowance)}`, `Carer’s Allowance ${g(P.carers.allowance)}`],
+  ['Extra for children', '—', `Scottish Child Payment ${g(P.scotland.childPayment)} a week`, '—', '—'],
+  ['Winter help, pension age', `Winter Fuel Payment ${g(P.winterFuel.base, 0)} or ${g(P.winterFuel.older, 0)}`, `Pension Age Winter Heating Payment ${g(P.scotland.pawhp[0])} to ${g(P.scotland.pawhp[3])}`, `Winter Fuel Payment ${g(P.winterFuel.base, 0)} or ${g(P.winterFuel.older, 0)}`, `Winter Fuel Payment ${g(P.winterFuel.base, 0)} or ${g(P.winterFuel.older, 0)}`],
+  ['Universal Credit housing costs', 'Paid to you', 'Paid to you; twice-monthly payments on request', 'Paid to you', 'Paid to your landlord'],
+];
+const changes: Array<[string, string]> = [
+  ['2026-04-06', `Two-child limit ended: the Universal Credit child element of ${g(P.uc.child)} a month is paid for every child.`],
+  ['2026-04-06', `New Universal Credit health claims get ${g(P.uc.lcwraNew2026)} a month instead of ${g(P.uc.lcwra)}, except for severe conditions and terminal illness.`],
+  ['2026-04-06', `Standard allowance for a single person 25 or over up from ${g(P.uc.previous.single25)} to ${g(P.uc.standard.single25)} a month.`],
+  ['2026-04-01', `Benefit cap earnings exemption raised to ${g(P.benefitCap.earningsExemptMonthly, 0)} a month; cap amounts unchanged.`],
+  ['2026-04-01', 'Crisis and Resilience Fund replaces the Household Support Fund in England.'],
+  ['2026-09-01', 'Free school meals in England for every child in a Universal Credit household, whatever the income.'],
+  [P.winterFuel.qualifyingWeekStart, `Winter Fuel Payment qualifying week: born on or before ${date(P.winterFuel.bornOnOrBefore)}, recovered above ${g(P.winterFuel.incomeThreshold, 0)}.`],
+];
+---
+<PageLayout title={x.title} description={x.description} lang={lang} jsonLd={jsonLd} faqs={x.faqs} sources={sources}>
+  <header class="mb-5">
+    <p class="kicker">April 2026 rates · read at source on <time datetime={LAST_UPDATED}>{date(LAST_UPDATED)}</time></p>
+    <h1 class="mt-2 text-3xl font-bold text-navy-900 md:text-5xl">{x.h1}</h1>
+    <p class="mt-3 text-lg text-navy-700">{x.intro}</p>
+  </header>
+  <Clamp text={x.resume} id="clamp-home" sentences={2} class="mb-8" />
+
+  <section aria-labelledby="checker" class="mb-10">
+    <h2 id="checker" class="mb-1 text-2xl font-bold text-navy-900">Your household, every benefit at once</h2>
+    <p class="mb-4 text-navy-700">Nine questions, a monthly total, and a link from each line to the full calculator for that benefit.</p>
+    <div data-chrome data-outil><BenefitsChecker client:load links={checkerLinks()} /></div>
+  </section>
+
+  <aside aria-label="Headline rates 2026/27" class="mb-12 border-y border-navy-200 py-4" data-chrome>
+    <dl class="grid grid-cols-2 gap-x-6 gap-y-4 sm:grid-cols-3 lg:grid-cols-6">
+      {strip.map(([k, v, u]) => <div><dt class="text-xs uppercase tracking-wide text-navy-600">{k}</dt><dd class="tabular-nums mt-1 text-xl font-bold text-navy-900">{v} <span class="text-sm font-normal text-navy-600">{u}</span></dd></div>)}
+    </dl>
+  </aside>
+
+  <section aria-labelledby="situations" class="mb-12" data-chrome>
+    <h2 id="situations" class="mb-4 text-2xl font-bold text-navy-900">Start from your situation</h2>
+    <div class="divide-y divide-navy-200 border-y border-navy-200">
+      {situations.map((s, i) => (
+        <details class="group py-3" open={i === 0}>
+          <summary class="cursor-pointer text-lg font-semibold text-navy-900">{s.title}</summary>
+          <p class="mt-2 text-navy-700">{s.lead}</p>
+          <p class="mt-2 text-sm">{s.ids.filter(has).map((id, k) => <>{k > 0 && ' · '}<a href={href(id)} class="text-accent-700 underline">{PAGES.find((p) => p.id === id)!.nav}</a></>)}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <section aria-labelledby="nations" class="mb-12">
+    <h2 id="nations" class="mb-4 text-2xl font-bold text-navy-900">Same rates, four systems</h2>
+    <div class="overflow-x-auto"><table class="journal w-full text-sm">
+      <caption class="mb-2 text-left text-sm text-navy-600">Who pays what in 2026/27, by nation</caption>
+      <thead><tr><th scope="col" class="py-2 pr-3 text-left">Support</th><th scope="col" class="py-2 pr-3 text-left">England</th><th scope="col" class="py-2 pr-3 text-left">Scotland</th><th scope="col" class="py-2 pr-3 text-left">Wales</th><th scope="col" class="py-2 text-left">Northern Ireland</th></tr></thead>
+      <tbody>{nations.map(([a, ...c]) => <tr class="border-t border-navy-100"><th scope="row" class="py-2 pr-3 text-left font-medium text-navy-900">{a}</th>{c.map((v) => <td class="py-2 pr-3 text-navy-800">{v}</td>)}</tr>)}</tbody>
+    </table></div>
+  </section>
+
+  <section aria-labelledby="changes" class="mb-12">
+    <h2 id="changes" class="mb-4 text-2xl font-bold text-navy-900">What changed in 2026</h2>
+    <ol class="space-y-3 border-l-2 border-accent-500 pl-5">
+      {changes.map(([d, t]) => <li><p class="text-sm font-semibold text-accent-700"><time datetime={d}>{date(d)}</time></p><p class="text-navy-800">{t}</p></li>)}
+    </ol>
+  </section>
+
+  <section aria-labelledby="why" class="mb-12 border-l-4 border-accent-500 bg-accent-50 px-5 py-4">
+    <h2 id="why" class="text-xl font-bold text-navy-900">Why this rather than the first result on Google</h2>
+    <p class="mt-2 text-navy-800">GOV.UK sends you to independent calculators that ask ten screens of questions. Here Universal Credit for 2026/27 is worked out in six fields, element by element, with private rent capped at the real Local Housing Allowance of your area and the April 2026 rules already applied (no two-child limit, the new health amount). Every rate is read on GOV.UK, Social Security Scotland or nidirect and dated. Who publishes the site: <a href={route('about', lang)} class="text-accent-700 underline">about Benefit Sums</a>. How each figure is calculated and tested: <a href={route('method', lang)} class="text-accent-700 underline">how we calculate</a>.</p>
+  </section>
+
+  <div class="prose prose-slate max-w-none"><Fragment set:html={x.body(h)} /></div>
+</PageLayout>

@@ -1,0 +1,27 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { AUTHOR_NAME, CONTACT_EMAIL, LAST_UPDATED, REVIEW_CYCLE_MONTHS, SITE_NAMES } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+const lang = 'en';
+---
+<PageLayout title={`Editorial policy of ${SITE_NAMES[lang]}: rates, sources, fixes`} description="Where the benefit rates on Benefit Sums come from, which sources we never use, when the 2026/27 figures are reviewed, how the calculators are tested and how mistakes are corrected." lang={lang} noindex={true} breadcrumbs={[{ label: 'Editorial policy' }]} showAuthor={false}>
+  <div class="prose prose-slate max-w-none">
+    <h1>Editorial and corrections policy</h1>
+    <p>Someone deciding whether to take extra hours, move house or claim for a parent may rely on these numbers. So each one is traceable to the body that set it, and a wrong one is fixed in the open.</p>
+    <h2>Who is responsible</h2><p>{AUTHOR_NAME}, reachable at <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</p>
+    <h2>Sources we use</h2>
+    <ul>
+      <li><strong>DWP</strong>: the yearly table of benefit and pension rates, the Universal Credit Local Housing Allowance files and the GOV.UK benefit guides;</li>
+      <li><strong>HMRC</strong>: Child Benefit, Guardian’s Allowance, Tax-Free Childcare and the High Income Child Benefit Charge;</li>
+      <li><strong>legislation.gov.uk</strong>: the Universal Credit Regulations 2013, the PIP Regulations 2013, the State Pension Credit Act 2002 and their regulations;</li>
+      <li><strong>Social Security Scotland</strong> and the Scottish Government for Scottish payments, <strong>nidirect</strong> and the Department for Communities for Northern Ireland.</li>
+    </ul>
+    <h2>Sources we do not use</h2><p>Newspaper explainers, claimant forums and other calculators may tell us what people are asking, never what a rate is. When two official pages disagree, the more recent and more specific one wins: the DWP rates table over an older example in a guide, as on GOV.UK’s DLA page, whose worked example still quotes an earlier highest care rate.</p>
+    <h2>Testing</h2><p>Every calculator is tested against the examples GOV.UK publishes and at the edges of each rule: £6,000 and £16,000 of savings, ages 25 and 35, the £204 carers’ limit, 8 and 12 PIP points, the State Pension age dates. A failing test stops the site from being built.</p>
+    <h2>Review cycle</h2><p>The full set of rates is checked every April, when the up-rating takes effect, and at least every {REVIEW_CYCLE_MONTHS} months; mid-year changes such as the Winter Fuel rules are added when announced. The date shown at the top of each page comes from the parameter file.</p>
+    <h2>Corrections</h2>
+    <ol><li>We check the report against the primary source.</li><li>We correct the parameter or the code and add a test.</li><li>The page shows the new date; a correction that changed an amount is mentioned on the page.</li></ol>
+    <h2>Independence</h2><p>No lender, letting agent, debt company or political party pays for or reviews what we publish. A commercial relationship, if one ever existed, would be disclosed on the page concerned.</p>
+    <p>See also the <a href={route('method', lang)}>method</a>. Version: {LAST_UPDATED}.</p>
+  </div>
+</PageLayout>

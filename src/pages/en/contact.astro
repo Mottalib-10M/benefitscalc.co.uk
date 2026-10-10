@@ -1,0 +1,23 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import LegalIdentity from '../../components/LegalIdentity.astro';
+import { CONTACT_EMAIL, LAST_UPDATED, REVIEW_CYCLE_MONTHS, SITE_NAMES } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+const lang = 'en';
+---
+<PageLayout title={`Contact ${SITE_NAMES[lang]}: report a rate, ask about a result`} description="Write to Benefit Sums about a 2026/27 benefit rate that looks wrong, a result that differs from your Universal Credit statement, or to embed the calculator on an advice website." lang={lang} noindex={true} breadcrumbs={[{ label: 'Contact' }]} showAuthor={false}>
+  <div class="prose prose-slate max-w-none">
+    <h1>Contact</h1>
+    <p>Email: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. Every message is read.</p>
+    <h2>Reporting an error</h2>
+    <p>Give us the page, the share link of the calculator (it holds only the answers you typed) and, if you have it, what your award letter or Universal Credit statement shows instead. An official page that says otherwise, a DWP rates table, a GOV.UK guide, a Social Security Scotland or nidirect page, settles it fastest. Confirmed mistakes are fixed and become tests, as the <a href={route('editorial', lang)}>editorial policy</a> explains.</p>
+    <h2>Putting the calculator on your site</h2>
+    <p>Food banks, housing associations, advice charities and local papers can show the Universal Credit calculator in an iframe at no cost. The line of code is on the <a href={route('widget', lang)}>embed page</a>.</p>
+    <h2>What we cannot do</h2>
+    <p>We cannot see your claim, contact the DWP for you or help with a reconsideration or tribunal. For that, Citizens Advice in England, Wales and Scotland, Advice NI in Northern Ireland, and the welfare rights service of your council are free. Never send us your National Insurance number or bank details.</p>
+    <h2>How quickly we reply</h2><p>Reports of a wrong amount are handled first, generally within five working days. Every figure is reviewed at least every {REVIEW_CYCLE_MONTHS} months and each April.</p>
+    <h2>Publisher</h2>
+    <LegalIdentity lang={lang} />
+    <p>Updated: {LAST_UPDATED}.</p>
+  </div>
+</PageLayout>
