@@ -141,3 +141,23 @@ describe('Winter Fuel Payment 2026/27', () => {
   });
   it('reclaimed by HMRC above £35,000', () => expect(winterFuel({ dob: '1950-01-01', living: 'alone', income: 35001 }).net).toBe(0));
 });
+
+import { deferNewScheme, deferOldScheme } from './pension-extra';
+describe('State Pension deferral (GOV.UK examples)', () => {
+  it('52 weeks of full new State Pension as arrears: £12,547.60', () => expect(deferNewScheme(241.30, 52, true).arrears).toBeCloseTo(12547.6, 2));
+  it('27 weeks as arrears: £6,515.10', () => expect(deferNewScheme(241.30, 27, true).arrears).toBeCloseTo(6515.1, 2));
+  it('78 weeks: 52 weeks of arrears, then 26 weeks give £6.97 a week (2.89%)', () => {
+    const r = deferNewScheme(241.30, 78, true); expect(r.arrears).toBeCloseTo(12547.6, 2); expect(r.extraWeekly).toBeCloseTo(6.97, 2);
+  });
+  it('old scheme: 52 weeks on £184.90 give £19.23 (GOV.UK rounds to 10.4% and quotes £19.22)', () => expect(deferOldScheme(184.90, 52)).toBeCloseTo(19.23, 2));
+});
+
+import { pawhp } from './winter-scot';
+describe('Pension Age Winter Heating Payment 2026/27 (mygov.scot scenarios)', () => {
+  it('alone: £211.15, or £316.70 if born before 28 September 1946', () => { expect(pawhp({ dob: '1955-01-01', living: 'alone', income: 0 }).amount).toBe(211.15); expect(pawhp({ dob: '1940-01-01', living: 'alone', income: 0 }).amount).toBe(316.7); });
+  it('living with another eligible person, no benefit: £105.55, £211.15 or £158.35', () => {
+    expect(pawhp({ dob: '1955-01-01', living: 'withEligible', partnerOlder: true, income: 0 }).amount).toBe(105.55);
+    expect(pawhp({ dob: '1940-01-01', living: 'withEligible', partnerOlder: false, income: 0 }).amount).toBe(211.15);
+    expect(pawhp({ dob: '1940-01-01', living: 'withEligible', partnerOlder: true, income: 0 }).amount).toBe(158.35);
+  });
+});
