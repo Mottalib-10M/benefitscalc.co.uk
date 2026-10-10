@@ -53,7 +53,7 @@ const miniHref = target !== page.id && ROUTES.some((r) => r.id === target) ? rou
       </>
     )}
     <div class="prose prose-slate max-w-none">
-      {parts.map((p, i) => i % 2 === 0 ? <Fragment set:html={p} /> : <MiniSim client:load kind={p} lang={lang} href={miniHref} />)}
+      {parts.map((p, i) => i % 2 === 0 ? <Fragment set:html={p} /> : <div data-chrome class="not-prose"><MiniSim client:load kind={p} lang={lang} href={miniHref} /></div>)}
     </div>
   </article>
 </PageLayout>

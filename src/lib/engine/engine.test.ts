@@ -58,7 +58,7 @@ describe('Universal Credit', () => {
     expect(applyCap({ familyOrCouple: true, london: false, monthlyBenefits: 2000, earnings: 0, exempt: false }).loss).toBe(165);
     expect(applyCap({ familyOrCouple: true, london: false, monthlyBenefits: 2000, earnings: 881, exempt: false }).loss).toBe(0);
     const r = computeUc({ ...base, children: 5, housing: 'social', rent: 900 });
-    expect(r.capped).toBe(true); expect(r.award).toBe(P.benefitCap.monthly.restFamily);
+    expect(r.capped).toBe(true); expect(r.award).toBeCloseTo(P.benefitCap.monthly.restFamily - ((27.05 + 4 * 17.90) * 52) / 12, 1);
   });
 });
 

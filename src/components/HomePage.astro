@@ -47,7 +47,7 @@ const nations: Array<[string, string, string, string, string]> = [
   ['Disability, working age', 'PIP (DWP)', 'Adult Disability Payment', 'PIP (DWP)', 'PIP (Department for Communities)'],
   ['Disability, pension age', 'Attendance Allowance', 'Pension Age Disability Payment', 'Attendance Allowance', 'Attendance Allowance'],
   ['Carers', `Carer’s Allowance ${g(P.carers.allowance)}`, `Carer Support Payment ${g(P.scotland.carerSupport)} + ${g(P.scotland.carerSupplement)} supplement`, `Carer’s Allowance ${g(P.carers.allowance)}`, `Carer’s Allowance ${g(P.carers.allowance)}`],
-  ['Extra for children', '—', `Scottish Child Payment ${g(P.scotland.childPayment)} a week`, '—', '—'],
+  ['Extra for children', 'No extra payment', `Scottish Child Payment ${g(P.scotland.childPayment)} a week`, 'No extra payment', 'No extra payment'],
   ['Winter help, pension age', `Winter Fuel Payment ${g(P.winterFuel.base, 0)} or ${g(P.winterFuel.older, 0)}`, `Pension Age Winter Heating Payment ${g(P.scotland.pawhp[0])} to ${g(P.scotland.pawhp[3])}`, `Winter Fuel Payment ${g(P.winterFuel.base, 0)} or ${g(P.winterFuel.older, 0)}`, `Winter Fuel Payment ${g(P.winterFuel.base, 0)} or ${g(P.winterFuel.older, 0)}`],
   ['Universal Credit housing costs', 'Paid to you', 'Paid to you; twice-monthly payments on request', 'Paid to you', 'Paid to your landlord'],
 ];
@@ -56,7 +56,7 @@ const changes: Array<[string, string]> = [
   ['2026-04-06', `New Universal Credit health claims get ${g(P.uc.lcwraNew2026)} a month instead of ${g(P.uc.lcwra)}, except for severe conditions and terminal illness.`],
   ['2026-04-06', `Standard allowance for a single person 25 or over up from ${g(P.uc.previous.single25)} to ${g(P.uc.standard.single25)} a month.`],
   ['2026-04-01', `Benefit cap earnings exemption raised to ${g(P.benefitCap.earningsExemptMonthly, 0)} a month; cap amounts unchanged.`],
-  ['2026-04-01', 'Crisis and Resilience Fund replaces the Household Support Fund in England.'],
+  ['2026-04-01', 'Crisis and Resilience Fund launched in England, run by local councils for people facing a financial crisis.'],
   ['2026-09-01', 'Free school meals in England for every child in a Universal Credit household, whatever the income.'],
   [P.winterFuel.qualifyingWeekStart, `Winter Fuel Payment qualifying week: born on or before ${date(P.winterFuel.bornOnOrBefore)}, recovered above ${g(P.winterFuel.incomeThreshold, 0)}.`],
 ];

@@ -43,7 +43,9 @@
   "minimumAward": 0.01,
   "sanctionDaily100": {
    "singleUnder25": 11.1,
-   "single25": 13.9
+   "single25": 13.9,
+   "coupleUnder25": 8.6,
+   "couple25": 10.9
   },
   "maxDeductionShare": 0.15,
   "maxDeduction": {
@@ -58,11 +60,78 @@
    "carer": 201.68,
    "lcwra": 423.27,
    "workAllowanceHigher": 684,
-   "workAllowanceLower": 411
+   "workAllowanceLower": 411,
+   "singleUnder25": 316.98,
+   "coupleUnder25": 497.55,
+   "couple25": 628.1,
+   "firstChildPre2017": 339.0,
+   "disabledChildLower": 158.76,
+   "disabledChildHigher": 495.87,
+   "lcw": 158.76,
+   "childcareMax1": 1031.88,
+   "childcareMax2": 1768.94,
+   "nonDepDeduction": 93.02,
+   "maxDeductionSingle25": 60.02
   },
   "aetSingle": 991,
   "aetCouple": 1597,
-  "wcaEarningsThreshold": 881
+  "wcaEarningsThreshold": 881,
+  "sanctionDaily40": {
+   "singleUnder25": 4.4,
+   "single25": 5.5,
+   "coupleUnder25": 3.4,
+   "couple25": 4.3
+  },
+  "sanctionReducedShare": 0.4,
+  "thirdPartyShare": 0.05,
+  "thirdParty": {
+   "singleUnder25": 16.93,
+   "single25": 21.25,
+   "coupleUnder25": 26.42,
+   "couple25": 33.35
+  },
+  "rentArrearsMinShare": 0.1,
+  "rentArrearsMin": {
+   "singleUnder25": 33.86,
+   "single25": 42.49,
+   "coupleUnder25": 52.83,
+   "couple25": 66.7
+  },
+  "maxThirdPartyDeductions": 3,
+  "rentArrearsObjectMonths": 2,
+  "objectionDays": 7,
+  "advanceRepayMonths": 24,
+  "paidDaysAfterPeriod": 7,
+  "firstPaymentWeeks": 5,
+  "scotlandSecondHalfDays": 15,
+  "reclaimMonths": 6,
+  "lcwPre2017Date": "2017-04-03",
+  "fitNoteDays": 7,
+  "wcaDays": 28,
+  "endOfLifeMonths": 12,
+  "wcaThresholdHours": 16,
+  "minAge": 18,
+  "youngPregnantWeeks": 11,
+  "youngBabyWeeks": 15,
+  "twoChildLimitStart": "2017-04-06",
+  "sanctionLowExtraDays": 7,
+  "sanctionMediumDays": 28,
+  "sanctionMediumRepeatDays": 91,
+  "sanctionHighDays": 91,
+  "sanctionHighMaxDays": 182,
+  "childcareClaimAheadPeriods": 3,
+  "childcareRegisteredUntilAge": 16,
+  "fullTimeEducationHours": 12,
+  "cancerTreatmentMonths": 6,
+  "homeSaleDisregardMonths": 6,
+  "compensationDisregardMonths": 12,
+  "sanctionMediumDays1617": 7,
+  "sanctionHighDays1617": 14,
+  "claimCompleteDays": 28,
+  "backdateMonths": 1,
+  "advanceDelayMonths": 3,
+  "childMaintenanceDeduction": 36.4,
+  "maxDeductionSharePrevious": 0.25
  },
  "lha": {
   "_src": [
@@ -73,7 +142,11 @@
   "sarAgeLimit": 35,
   "socialSpareOne": 0.14,
   "socialSpareTwo": 0.25,
-  "frozenSince": "2024-04-01"
+  "frozenSince": "2024-04-01",
+  "sarCareLeaverUnder": 25,
+  "sarHostelMonths": 3,
+  "maxBedrooms": 4,
+  "niAreas": 8
  },
  "benefitCap": {
   "_src": [
@@ -101,7 +174,8 @@
   },
   "earningsExemptMonthly": 881,
   "earningsExemptMonthlyPrev": 846,
-  "gracePeriodMonths": 9
+  "gracePeriodMonths": 9,
+  "graceQualifyingMonths": 12
  },
  "pensionCredit": {
   "_src": [
@@ -131,7 +205,11 @@
   "applyMonthsBefore": 4,
   "previous": {
    "guaranteeSingle": 227.1,
-   "guaranteeCouple": 346.6
+   "guaranteeCouple": 346.6,
+   "savingsThresholdSingle": 198.27,
+   "savingsThresholdCouple": 314.34,
+   "savingsMaxSingle": 17.3,
+   "savingsMaxCouple": 19.36
   }
  },
  "housingBenefit": {
@@ -175,7 +253,14 @@
     1000000000.0,
     131.45
    ]
-  ]
+  ],
+  "capitalLowerWorking": 6000,
+  "advanceClaimWeeks": 13,
+  "advanceClaimWeeks60": 17,
+  "extendedPaymentWeeks": 4,
+  "coupleRuleDate": "2019-05-15",
+  "lhaProtectedBefore": "2008-04-07",
+  "fosterSpareWeeks": 52
  },
  "pip": {
   "_src": [
@@ -198,7 +283,23 @@
    "dailyEnhanced": 110.4,
    "mobilityStandard": 29.2,
    "mobilityEnhanced": 77.05
-  }
+  },
+  "minAge": 16,
+  "residenceWeeks": 104,
+  "residenceOutOfWeeks": 156,
+  "awardMinMonths": 9,
+  "awardMaxYears": 10,
+  "formReturnMonths": 1,
+  "moveStopWeeks": 13,
+  "abroadReportWeeks": 4,
+  "endOfLifeMonths": 12,
+  "reasonableTimeMultiple": 2,
+  "overHalfOfDays": 0.5,
+  "reclaimAfterSpaMonths": 12,
+  "assessmentHours": 1,
+  "dlaKeptBornOnOrBefore": "1948-04-08",
+  "smallAwardWeekly": 5,
+  "smallAwardMaxMonths": 12
  },
  "aa": {
   "_src": [
@@ -207,7 +308,18 @@
   ],
   "lower": 76.7,
   "higher": 114.6,
-  "needMonths": 6
+  "needMonths": 6,
+  "residenceYears": 2,
+  "residenceOutOfYears": 3,
+  "formReturnWeeks": 6,
+  "contactWeeks": 3,
+  "moveStopWeeks": 13,
+  "abroadReportWeeks": 4,
+  "endOfLifeMonths": 12,
+  "previous": {
+   "lower": 73.9,
+   "higher": 110.4
+  }
  },
  "dla": {
   "_src": [
@@ -218,7 +330,34 @@
   "careMiddle": 76.7,
   "careHighest": 114.6,
   "mobilityLower": 30.3,
-  "mobilityHigher": 80.0
+  "mobilityHigher": 80.0,
+  "qualifyMonthsPast": 3,
+  "qualifyMonthsFuture": 6,
+  "ageLimit": 16,
+  "mobilityLowerFromAge": 5,
+  "mobilityHigherFromAge": 3,
+  "paidEveryWeeks": 4,
+  "payday": "Tuesday",
+  "claimPackReturnWeeks": 6,
+  "contactWeeks": 3,
+  "moveStopWeeks": 13,
+  "packBeforeMonths": 6,
+  "careHomeDays": 28,
+  "abroadWeeks": 13,
+  "abroadMedicalWeeks": 26,
+  "residenceUnder6mWeeks": 13,
+  "residence6mTo3yWeeks": 26,
+  "residence6mTo3yOutOf": 156,
+  "residenceOver3Months": 6,
+  "residenceOver3OutOf": 12,
+  "pipLetterWeeksBeforeEnd": 20,
+  "previous": {
+   "careLowest": 29.2,
+   "careMiddle": 73.9,
+   "careHighest": 110.4,
+   "mobilityLower": 29.2,
+   "mobilityHigher": 77.05
+  }
  },
  "carers": {
   "_src": [
@@ -236,7 +375,13 @@
   "previous": {
    "allowance": 83.3,
    "earningsLimit": 196.0
-  }
+  },
+  "backdateMonths": 3,
+  "hospitalBreakWeeks": 12,
+  "otherBreakDays": 28,
+  "residenceYears": 2,
+  "residenceOutOfYears": 3,
+  "moveStopWeeks": 13
  },
  "childBenefit": {
   "_src": [
@@ -253,13 +398,37 @@
   "previous": {
    "eldest": 26.05,
    "additional": 17.25
-  }
+  },
+  "prior2024": {
+   "eldest": 25.6,
+   "additional": 16.95
+  },
+  "ageLimit": 16,
+  "educationAgeLimit": 20,
+  "niCreditChildUnder": 12,
+  "leaverExtensionWeeks": 20,
+  "claimAfterBirthHours": 48,
+  "paidEveryWeeks": 4,
+  "restartDays": 28,
+  "hicbcFullAbove": 20000,
+  "hicbcThresholdPre2024": 50000,
+  "hicbcPerPctPre2024": 100,
+  "hicbcPayeDeadline": "31 January",
+  "hicbcSaRegisterBy": "5 October",
+  "courseAcceptedBefore": 19,
+  "fullTimeHours": 12,
+  "workHoursStop": 24
  },
  "guardiansAllowance": {
   "_src": [
    "hmrcCbRates"
   ],
-  "weekly": 22.95
+  "weekly": 22.95,
+  "previous": 22.1,
+  "prior2024": 21.75,
+  "backdateMonths": 3,
+  "parentResidenceWeeks": 52,
+  "prisonYears": 2
  },
  "statePension": {
   "_src": [
@@ -277,12 +446,20 @@
   "tripleLockIncrease": 0.048,
   "previous": {
    "newFull": 230.25,
-   "basicFull": 176.45
+   "basicFull": 176.45,
+   "basicLower": 105.7
   },
   "newScheme": {
    "menBornFrom": "1951-04-06",
    "womenBornFrom": "1953-04-06"
-  }
+  },
+  "deferArrearsMaxWeeks": 52,
+  "oldDeferPct5Weeks": 0.01,
+  "oldDeferMinWeeks": 5,
+  "oldLumpSumMinMonths": 12,
+  "oldLumpSumInterestOverBase": 0.02,
+  "age80Addition": 0.25,
+  "maxAdditionalPension": 230.54
  },
  "spa": {
   "_src": [
@@ -463,7 +640,72 @@
   "bsgPregnancySubsequent": 398.35,
   "bsgEarlyLearning": 331.95,
   "bsgSchoolAge": 331.95,
-  "funeralSupport": 1327.75
+  "funeralSupport": 1327.75,
+  "winterHeatingPrev": 59.75,
+  "bsfHigherWeekly": 11.2,
+  "bsfLowerWeekly": 5.6,
+  "bsfHigherWeeklyPrev": 10.8,
+  "bsfLowerWeeklyPrev": 5.4,
+  "bsgPrev": {
+   "pregnancyFirst": 767.5,
+   "pregnancySubsequent": 383.75,
+   "earlyLearning": 319.8,
+   "schoolAge": 319.8
+  },
+  "bsgPregnancyFromWeek": 24,
+  "bsgPregnancyToMonths": 6,
+  "scpAgeLimit": 16,
+  "scpPaidEveryWeeks": 4,
+  "bsgSchoolAgeWindow": {
+   "bornFrom": "2021-03-01",
+   "bornTo": "2022-02-28",
+   "applyFrom": "2026-06-01",
+   "applyTo": "2027-02-28"
+  },
+  "bsgSchoolAgeWindowNext": {
+   "bornFrom": "2022-03-01",
+   "bornTo": "2023-02-28",
+   "applyFrom": "2027-06-01",
+   "applyTo": "2028-02-29"
+  },
+  "cwhpAgeUnder": 19,
+  "scpAgeUnder": 16,
+  "pawhpPrev": [
+   101.7,
+   152.55,
+   203.4,
+   305.1
+  ],
+  "youngCarerGrant": 405.1,
+  "jobStart": 331.95,
+  "jobStartHigher": 531.1,
+  "funeralSupportLower": 162.05,
+  "bestStartFoodsLow": 22.4,
+  "bestStartFoodsHigh": 44.8,
+  "ycgHours": 16,
+  "cas": 304.65,
+  "casPrev": 293.5,
+  "casJuneQualifying": "2026-04-13",
+  "casDecemberQualifying": "2026-10-12",
+  "cspResidenceWeeks": 26,
+  "cspResidenceOutOf": 52,
+  "cappHours": 20,
+  "cspStudyHours": 21,
+  "cspPaidEveryWeeks": 4,
+  "carerSupportPrev": 83.3,
+  "carerSupplementPrev": 11.29,
+  "carerAdditionalPersonPrev": 10.0,
+  "cdpCareFromMonths": 3,
+  "cdpUntilAge": 18,
+  "adpApplyWeeksBefore16": 13,
+  "adpTerminalDecisionDays": 7,
+  "adpTransitional": 30.3,
+  "adpPrev": {
+   "dailyStandard": 73.9,
+   "dailyEnhanced": 110.4,
+   "mobilityStandard": 29.2,
+   "mobilityEnhanced": 77.05
+  }
  },
  "childcare": {
   "_src": [
@@ -483,7 +725,20 @@
   "freeHoursUniversal3to4": 15,
   "weeksPerYear": 38,
   "applyFromWeeks": 23,
-  "ucFreeChildcareIncomeLimit": 15400
+  "ucFreeChildcareIncomeLimit": 15400,
+  "tfcChildAgeLimit": 11,
+  "tfcDisabledAgeLimit": 16,
+  "reconfirmMonths": 3,
+  "freeHoursFromMonths": 9,
+  "minEarnWeekly21": 203.36,
+  "minEarnWeekly18": 173.6,
+  "minEarnWeeklyUnder18": 128,
+  "minEarnHours": 16,
+  "minEarnYear21": 10574.72,
+  "decisionDays": 10,
+  "codeDigits": 11,
+  "voucherNoticeDays": 90,
+  "extraSupportHours2yo": 15
  },
  "maternity": {
   "_src": [
@@ -496,14 +751,38 @@
   "maThreshold": 30,
   "maWeeks": 39,
   "maShare": 0.9,
-  "ssmg": 500
+  "ssmg": 500,
+  "maPrevious": 187.18,
+  "maTestWeeks": 66,
+  "maQualifyWeeks": 26,
+  "maEarningsWeeks": 13,
+  "maSpouseWeeks": 14,
+  "maClass2Weekly": 3.65,
+  "maClaimFromPregnancyWeek": 26,
+  "maStartWeeksBefore": 11,
+  "maBackdateMonths": 3,
+  "maKitDays": 10,
+  "maDecisionWorkingDays": 20,
+  "smpLeaveWeeks": 52,
+  "ssmgClaimWeeksBefore": 11,
+  "ssmgClaimMonthsAfter": 6,
+  "ssmgDecisionDays": 28,
+  "ssmgAdoptAgeUnderMonths": 12,
+  "maFine": 50
  },
  "schoolMeals": {
   "_src": [
    "govFsm"
   ],
   "ucIncomeLimitBefore": 7400,
-  "allUcFrom": "2026-09-01"
+  "allUcFrom": "2026-09-01",
+  "scotUcEarnedMonthly": 995,
+  "niUcNetEarningsYear": 15900,
+  "niUcNetEarningsYearPrev": 15390,
+  "walesEssentialsGrant": 200,
+  "scotUniversalToP": 5,
+  "scotElcHours": 1140,
+  "scotBreakfastFrom": "2027-08-01"
  },
  "budgetingLoan": {
   "_src": [
@@ -514,7 +793,13 @@
   "couple": 464,
   "withChildBenefit": 812,
   "savingsLimit": 1000,
-  "savingsLimit63": 2000
+  "savingsLimit63": 2000,
+  "qualifyingMonths": 6,
+  "debtLimit": 1500,
+  "repayWeeks": 104,
+  "reviewDays": 28,
+  "decisionDaysOnline": 7,
+  "decisionDaysPost": 21
  },
  "bereavement": {
   "_src": [
@@ -525,7 +810,16 @@
   "standardMonthly": 100,
   "higherLump": 3500,
   "higherMonthly": 350,
-  "months": 18
+  "months": 18,
+  "fullClaimMonths": 3,
+  "lumpSumClaimMonths": 12,
+  "maxClaimMonths": 21,
+  "benefitDisregardMonths": 12,
+  "niSince": "1975-04-06",
+  "schemeFrom": "2017-04-06",
+  "widowedParent": 156.65,
+  "widowedParentsAllowance": 156.65,
+  "widowedParentsAllowancePrev": 150.9
  },
  "esaJsa": {
   "_src": [
@@ -534,7 +828,51 @@
   "under25": 75.65,
   "over25": 95.55,
   "esaWra": 37.95,
-  "esaSupport": 50.35
+  "esaSupport": 50.35,
+  "assessmentWeeks": 13,
+  "wragDays": 365,
+  "pensionThreshold": 85,
+  "pensionTaper": 0.5,
+  "permittedWorkLimit": 203.5,
+  "permittedWorkHours": 16,
+  "paidEveryWeeks": 2,
+  "applyBeforeSspEndsMonths": 3,
+  "wraComponentEnded": "2017-04-03",
+  "capitalReport": 6000,
+  "contactWorkingDays": 10,
+  "previous": {
+   "under25": 72.9,
+   "over25": 92.05,
+   "esaWra": 36.55,
+   "esaSupport": 48.5
+  },
+  "paydayByNino": [
+   [
+    "00",
+    "19",
+    "Monday"
+   ],
+   [
+    "20",
+    "39",
+    "Tuesday"
+   ],
+   [
+    "40",
+    "59",
+    "Wednesday"
+   ],
+   [
+    "60",
+    "79",
+    "Thursday"
+   ],
+   [
+    "80",
+    "99",
+    "Friday"
+   ]
+  ]
  },
  "ssp": {
   "_src": [
@@ -938,6 +1276,546 @@
    "label": {
     "en": "GOV.UK, Health conditions, disability and Universal Credit"
    }
+  },
+  "govBankHolidays": {
+   "url": "https://www.gov.uk/bank-holidays",
+   "label": {
+    "en": "UK bank holidays (GOV.UK)"
+   }
+  },
+  "ucRegs21": {
+   "url": "https://www.legislation.gov.uk/uksi/2013/376/regulation/21",
+   "label": {
+    "en": "Universal Credit Regulations 2013, regulation 21: assessment periods"
+   }
+  },
+  "ucRegs29": {
+   "url": "https://www.legislation.gov.uk/uksi/2013/376/regulation/29",
+   "label": {
+    "en": "Universal Credit Regulations 2013, regulation 29: award to include the carer element"
+   }
+  },
+  "ucRegs30": {
+   "url": "https://www.legislation.gov.uk/uksi/2013/376/regulation/30",
+   "label": {
+    "en": "Universal Credit Regulations 2013, regulation 30: regular and substantial caring responsibilities"
+   }
+  },
+  "ucRegs41": {
+   "url": "https://www.legislation.gov.uk/uksi/2013/376/regulation/41",
+   "label": {
+    "en": "Universal Credit Regulations 2013, regulation 41: when a Work Capability Assessment may be carried out"
+   }
+  },
+  "govUcHealthAmount": {
+   "url": "https://www.gov.uk/guidance/universal-credit-what-you-could-get-if-you-have-a-health-condition-or-disability",
+   "label": {
+    "en": "Universal Credit: what you could get if you have a health condition or disability (GOV.UK)"
+   }
+  },
+  "govUcDeductions": {
+   "url": "https://www.gov.uk/guidance/find-out-about-money-taken-off-your-universal-credit-payment",
+   "label": {
+    "en": "Find out about money taken off your Universal Credit payment (GOV.UK)"
+   }
+  },
+  "govUcSanctions": {
+   "url": "https://www.gov.uk/guidance/universal-credit-sanctions",
+   "label": {
+    "en": "Universal Credit sanctions (GOV.UK)"
+   }
+  },
+  "govUcSavings": {
+   "url": "https://www.gov.uk/guidance/universal-credit-money-savings-and-investments",
+   "label": {
+    "en": "Universal Credit: money, savings and investments (GOV.UK)"
+   }
+  },
+  "govUcAdvance": {
+   "url": "https://www.gov.uk/universal-credit-advance-hardship-payment",
+   "label": {
+    "en": "GOV.UK, Apply for a Universal Credit advance or hardship payment (Budgeting Advance: £100 to £812)"
+   }
+  },
+  "govUcHowPaid": {
+   "url": "https://www.gov.uk/universal-credit/how-youre-paid",
+   "label": {
+    "en": "Universal Credit: how you're paid (GOV.UK)"
+   }
+  },
+  "govCbHowToClaim": {
+   "url": "https://www.gov.uk/child-benefit/how-to-claim",
+   "label": {
+    "en": "GOV.UK, Child Benefit: make a claim (backdated up to 3 months)"
+   }
+  },
+  "govCbEligibility": {
+   "url": "https://www.gov.uk/child-benefit/eligibility",
+   "label": {
+    "en": "GOV.UK, Child Benefit: who can get Child Benefit"
+   }
+  },
+  "govCbPaid": {
+   "url": "https://www.gov.uk/child-benefit/when-and-how-its-paid",
+   "label": {
+    "en": "GOV.UK, Child Benefit: when and how it’s paid"
+   }
+  },
+  "govHicbcOptOut": {
+   "url": "https://www.gov.uk/child-benefit-tax-charge/stop-child-benefit",
+   "label": {
+    "en": "GOV.UK, High Income Child Benefit Charge: opt out of Child Benefit payments"
+   }
+  },
+  "govHicbcSa": {
+   "url": "https://www.gov.uk/child-benefit-tax-charge/pay-tax-charge-self-assessment",
+   "label": {
+    "en": "GOV.UK, High Income Child Benefit Charge: pay through Self Assessment (register by 5 October)"
+   }
+  },
+  "govTfcElig": {
+   "url": "https://www.gov.uk/tax-free-childcare/check-if-youre-eligible",
+   "label": {
+    "en": "GOV.UK, Tax-Free Childcare: check if you’re eligible"
+   }
+  },
+  "govFreeChildcareWhen": {
+   "url": "https://www.gov.uk/free-childcare-if-working/when-to-apply",
+   "label": {
+    "en": "GOV.UK, Free Childcare for Working Parents: when to apply (deadline for each term)"
+   }
+  },
+  "govFreeChildcareElig": {
+   "url": "https://www.gov.uk/free-childcare-if-working/check-youre-eligible",
+   "label": {
+    "en": "GOV.UK, Free Childcare for Working Parents: check if you’re eligible (minimum earnings, £100,000 limit)"
+   }
+  },
+  "govSsmgElig": {
+   "url": "https://www.gov.uk/sure-start-maternity-grant/eligibility",
+   "label": {
+    "en": "GOV.UK, Sure Start Maternity Grant: eligibility"
+   }
+  },
+  "govSsmgClaim": {
+   "url": "https://www.gov.uk/sure-start-maternity-grant/how-to-claim",
+   "label": {
+    "en": "GOV.UK, Sure Start Maternity Grant: how to claim (11 weeks before the due week to 6 months after the birth)"
+   }
+  },
+  "govMaElig": {
+   "url": "https://www.gov.uk/maternity-allowance/eligibility",
+   "label": {
+    "en": "GOV.UK, Maternity Allowance: eligibility (26 weeks in the 66-week test period, £30 a week in 13 weeks)"
+   }
+  },
+  "govMaClaim": {
+   "url": "https://www.gov.uk/maternity-allowance/how-to-claim",
+   "label": {
+    "en": "GOV.UK, Maternity Allowance: how to claim"
+   }
+  },
+  "govGuardianElig": {
+   "url": "https://www.gov.uk/guardians-allowance/eligibility",
+   "label": {
+    "en": "GOV.UK, Guardian’s Allowance: eligibility"
+   }
+  },
+  "govBereavementWhat": {
+   "url": "https://www.gov.uk/bereavement-support-payment/what-youll-get",
+   "label": {
+    "en": "GOV.UK, Bereavement Support Payment: what you’ll get"
+   }
+  },
+  "govBereavementElig": {
+   "url": "https://www.gov.uk/bereavement-support-payment/eligibility",
+   "label": {
+    "en": "GOV.UK, Bereavement Support Payment: eligibility (claim within 3 months for the full amount)"
+   }
+  },
+  "cpRegs19": {
+   "url": "https://www.legislation.gov.uk/uksi/1987/1968/regulation/19",
+   "label": {
+    "en": "Social Security (Claims and Payments) Regulations 1987, regulation 19 (time for claiming: three months for Child Benefit, Guardian’s Allowance, Maternity Allowance, Bereavement Support Payment)"
+   }
+  },
+  "scotScpWho": {
+   "url": "https://www.mygov.scot/scottish-child-payment/who-should-apply",
+   "label": {
+    "en": "mygov.scot (Social Security Scotland), Scottish Child Payment: who should apply (qualifying benefits)"
+   }
+  },
+  "scotBsgWho": {
+   "url": "https://www.mygov.scot/best-start-grant-best-start-foods/best-start-apply",
+   "label": {
+    "en": "mygov.scot (Social Security Scotland), Best Start Grant and Best Start Foods: who should apply (updated 10 August 2026)"
+   }
+  },
+  "scotBsgAuto": {
+   "url": "https://www.mygov.scot/best-start-grant-best-start-foods/other-benefits",
+   "label": {
+    "en": "mygov.scot (Social Security Scotland), Best Start Grant: automatic Early Learning and School Age Payments for Scottish Child Payment families"
+   }
+  },
+  "scotSchoolMeals": {
+   "url": "https://www.mygov.scot/primary-school-meals",
+   "label": {
+    "en": "mygov.scot, Free school meals in Scotland (updated 1 April 2026: P1 to P5 universal, Universal Credit earnings up to £995 a month)"
+   }
+  },
+  "nidSchoolMeals": {
+   "url": "https://www.nidirect.gov.uk/articles/nutrition-and-school-meals",
+   "label": {
+    "en": "nidirect, Nutrition and school meals (Universal Credit net earnings limit £15,900 for 2026 to 2027)"
+   }
+  },
+  "walesUpfsm": {
+   "url": "https://www.gov.wales/universal-primary-free-school-meals-upfsm",
+   "label": {
+    "en": "Welsh Government, Universal Primary Free School Meals (UPFSM)"
+   }
+  },
+  "walesSchoolCosts": {
+   "url": "https://www.gov.wales/get-help-school-costs",
+   "label": {
+    "en": "Welsh Government, Get help with school costs (School Essentials Grant up to £200; secondary free school meals for Universal Credit households, starting with years 7 and 8)"
+   }
+  },
+  "govWhd": {
+   "url": "https://www.gov.uk/the-warm-home-discount-scheme",
+   "label": {
+    "en": "GOV.UK, Warm Home Discount Scheme (£150, winter 2026 to 2027, qualifying date 23 August 2026)"
+   }
+  },
+  "govHbGet": {
+   "url": "https://www.gov.uk/housing-benefit/what-youll-get",
+   "label": {
+    "en": "GOV.UK, Housing Benefit: eligibility and what you’ll get"
+   }
+  },
+  "govColHelp": {
+   "url": "https://www.gov.uk/cost-living-help-local-council",
+   "label": {
+    "en": "GOV.UK, Get help with the cost of living from your local council (Crisis and Resilience Fund)"
+   }
+  },
+  "hbRegsB13": {
+   "url": "https://www.legislation.gov.uk/uksi/2006/213/regulation/B13",
+   "label": {
+    "en": "Housing Benefit Regulations 2006, regulation B13 (social sector size criteria, 14% and 25%)"
+   }
+  },
+  "scotChoices": {
+   "url": "https://www.gov.scot/policies/social-security/universal-credit/",
+   "label": {
+    "en": "Scottish Government, Universal Credit (Scottish choices): twice-monthly payment and housing costs paid to the landlord"
+   }
+  },
+  "scotHousingCosts": {
+   "url": "https://www.gov.scot/policies/social-security/support-with-housing-costs/",
+   "label": {
+    "en": "Scottish Government, Housing cost support (Discretionary Housing Payments mitigating the bedroom tax and benefit cap)"
+   }
+  },
+  "nidUcPaid": {
+   "url": "https://www.nidirect.gov.uk/articles/how-much-universal-credit-you-get-and-how-youre-paid",
+   "label": {
+    "en": "nidirect, How much Universal Credit you get and how you’re paid (twice a month in Northern Ireland)"
+   }
+  },
+  "nidHbChanges": {
+   "url": "https://www.nidirect.gov.uk/articles/changes-housing-benefit",
+   "label": {
+    "en": "nidirect, Changes to Housing Benefit (Social Sector Size Criteria and Welfare Supplementary Payment)"
+   }
+  },
+  "nidRateRebate": {
+   "url": "https://www.nidirect.gov.uk/articles/rate-rebate-scheme",
+   "label": {
+    "en": "nidirect, Applying for Rate Rebate (Universal Credit claimants)"
+   }
+  },
+  "nidDiscretionary": {
+   "url": "https://www.nidirect.gov.uk/articles/discretionary-support",
+   "label": {
+    "en": "nidirect, Discretionary Support (Northern Ireland)"
+   }
+  },
+  "ucRegsSch4p29": {
+   "url": "https://www.legislation.gov.uk/uksi/2013/376/schedule/4/paragraph/29",
+   "label": {
+    "en": "Universal Credit Regulations 2013, Schedule 4, paragraph 29: renters excepted from shared accommodation"
+   }
+  },
+  "scotCwhpWho": {
+   "url": "https://www.mygov.scot/child-winter-heating-payment/who-can-get-child-winter-heating-payment",
+   "label": {
+    "en": "mygov.scot (Social Security Scotland), Who can get Child Winter Heating Payment (under 19, highest care or enhanced daily living rate)"
+   }
+  },
+  "scotWhpElig": {
+   "url": "https://www.mygov.scot/winter-heating-payment/eligibility",
+   "label": {
+    "en": "mygov.scot (Social Security Scotland), Winter Heating Payment: qualifying benefits (qualifying week 2 to 8 November 2026)"
+   }
+  },
+  "govCb1619": {
+   "url": "https://www.gov.uk/child-benefit-16-19",
+   "label": {
+    "en": "GOV.UK, Child Benefit when your child turns 16 (approved education and training, 20-week extension)"
+   }
+  },
+  "ucRegs55": {
+   "url": "https://www.legislation.gov.uk/uksi/2013/376/regulation/55",
+   "label": {
+    "en": "Universal Credit Regulations 2013, regulation 55: employed earnings"
+   }
+  },
+  "govOver80": {
+   "url": "https://www.gov.uk/over-80-pension",
+   "label": {
+    "en": "GOV.UK, Over 80 pension (Category D)"
+   }
+  },
+  "govBasicSp": {
+   "url": "https://www.gov.uk/state-pension",
+   "label": {
+    "en": "GOV.UK, The basic State Pension"
+   }
+  },
+  "govIncomeTax": {
+   "url": "https://www.gov.uk/income-tax-rates",
+   "label": {
+    "en": "GOV.UK, Income Tax rates and Personal Allowances (tax year 6 April 2026 to 5 April 2027)"
+   }
+  },
+  "ucRegsSch9": {
+   "url": "https://www.legislation.gov.uk/uksi/2013/376/schedule/9",
+   "label": {
+    "en": "Universal Credit Regulations 2013, Schedule 9: treated as having limited capability for work and work-related activity"
+   }
+  },
+  "govCalculators": {
+   "url": "https://www.gov.uk/benefits-calculators",
+   "label": {
+    "en": "GOV.UK, Benefits calculators (independent calculators listed by GOV.UK)"
+   }
+  },
+  "scotYcg": {
+   "url": "https://www.mygov.scot/young-carer-grant",
+   "label": {
+    "en": "mygov.scot (Social Security Scotland), Young Carer Grant (£405.10 a year, ages 16 to 19)"
+   }
+  },
+  "scotJsp": {
+   "url": "https://www.mygov.scot/job-start-payment",
+   "label": {
+    "en": "mygov.scot (Social Security Scotland), Job Start Payment"
+   }
+  },
+  "scotFsp": {
+   "url": "https://www.mygov.scot/funeral-support-payment",
+   "label": {
+    "en": "mygov.scot (Social Security Scotland), Funeral Support Payment"
+   }
+  },
+  "govPipClaim": {
+   "url": "https://www.gov.uk/pip/after-youve-applied",
+   "label": {
+    "en": "GOV.UK, Personal Independence Payment: after you've applied (award of 9 months to 10 years)"
+   }
+  },
+  "govPipChanges": {
+   "url": "https://www.gov.uk/pip/change-of-circumstances",
+   "label": {
+    "en": "GOV.UK, Personal Independence Payment: report a change to your needs or circumstances"
+   }
+  },
+  "pipRegs4": {
+   "url": "https://www.legislation.gov.uk/uksi/2013/377/regulation/4",
+   "label": {
+    "en": "Social Security (Personal Independence Payment) Regulations 2013, regulation 4 (safely, acceptable standard, repeatedly, reasonable time)"
+   }
+  },
+  "pipRegs7": {
+   "url": "https://www.legislation.gov.uk/uksi/2013/377/regulation/7",
+   "label": {
+    "en": "Social Security (Personal Independence Payment) Regulations 2013, regulation 7 (descriptor met on over 50% of days)"
+   }
+  },
+  "pipRegs12": {
+   "url": "https://www.legislation.gov.uk/uksi/2013/377/regulation/12",
+   "label": {
+    "en": "Social Security (Personal Independence Payment) Regulations 2013, regulation 12 (required period: 3 months back, 9 months ahead)"
+   }
+  },
+  "pipRegs16": {
+   "url": "https://www.legislation.gov.uk/uksi/2013/377/regulation/16",
+   "label": {
+    "en": "Social Security (Personal Independence Payment) Regulations 2013, regulation 16 (104 of the last 156 weeks in Great Britain)"
+   }
+  },
+  "govMr": {
+   "url": "https://www.gov.uk/mandatory-reconsideration",
+   "label": {
+    "en": "GOV.UK, Challenge a benefit decision (mandatory reconsideration)"
+   }
+  },
+  "govAaElig": {
+   "url": "https://www.gov.uk/attendance-allowance/eligibility",
+   "label": {
+    "en": "GOV.UK, Attendance Allowance: eligibility"
+   }
+  },
+  "govAaClaim": {
+   "url": "https://www.gov.uk/attendance-allowance/how-to-claim",
+   "label": {
+    "en": "GOV.UK, Attendance Allowance: how to claim"
+   }
+  },
+  "govDlaChildRates": {
+   "url": "https://www.gov.uk/disability-living-allowance-children/rates",
+   "label": {
+    "en": "GOV.UK, DLA for children: rates and how it is paid"
+   }
+  },
+  "govDlaChildElig": {
+   "url": "https://www.gov.uk/disability-living-allowance-children/eligibility",
+   "label": {
+    "en": "GOV.UK, DLA for children: eligibility (age limits for each mobility rate)"
+   }
+  },
+  "scotCdp": {
+   "url": "https://www.mygov.scot/child-disability-payment",
+   "label": {
+    "en": "mygov.scot (Social Security Scotland), Child Disability Payment"
+   }
+  },
+  "scotAdpWho": {
+   "url": "https://www.mygov.scot/adult-disability-payment/applicants",
+   "label": {
+    "en": "mygov.scot (Social Security Scotland), Who can apply for Adult Disability Payment"
+   }
+  },
+  "scotAdpPayments": {
+   "url": "https://www.mygov.scot/adult-disability-payment/payments",
+   "label": {
+    "en": "mygov.scot (Social Security Scotland), When you get Adult Disability Payment"
+   }
+  },
+  "scotCdpToAdp": {
+   "url": "https://www.mygov.scot/moving-from-child-disability-payment-to-adult-disability-payment",
+   "label": {
+    "en": "mygov.scot (Social Security Scotland), Moving from Child Disability Payment to Adult Disability Payment"
+   }
+  },
+  "scotMove": {
+   "url": "https://www.mygov.scot/moving-to-scotland/tell-your-benefit-provider-youve-moved-to-scotland",
+   "label": {
+    "en": "mygov.scot, Moving to Scotland: tell your benefit provider (DWP payments stop 13 weeks after the move)"
+   }
+  },
+  "govCaEffect": {
+   "url": "https://www.gov.uk/carers-allowance/effect-on-other-benefits",
+   "label": {
+    "en": "GOV.UK, Carer's Allowance: effect on other benefits"
+   }
+  },
+  "govCaClaim": {
+   "url": "https://www.gov.uk/carers-allowance/how-to-claim",
+   "label": {
+    "en": "GOV.UK, Carer's Allowance: make a claim (backdating up to 3 months)"
+   }
+  },
+  "govCaChanges": {
+   "url": "https://www.gov.uk/carers-allowance/further-information",
+   "label": {
+    "en": "GOV.UK, Carer's Allowance: report a change in circumstances (breaks in caring)"
+   }
+  },
+  "scotCas": {
+   "url": "https://www.mygov.scot/carers-allowance-supplement",
+   "label": {
+    "en": "mygov.scot (Social Security Scotland), Carer's Allowance Supplement (updated 28 May 2026)"
+   }
+  },
+  "scotCspWho": {
+   "url": "https://www.mygov.scot/carer-support-payment/who-can-apply",
+   "label": {
+    "en": "mygov.scot (Social Security Scotland), Who can apply for carer benefits"
+   }
+  },
+  "scotCspOverlap": {
+   "url": "https://www.mygov.scot/carer-support-payment/overlapping-benefits",
+   "label": {
+    "en": "mygov.scot (Social Security Scotland), State Pension and other benefits that reduce Carer Support Payment"
+   }
+  },
+  "scotCspEffect": {
+   "url": "https://www.mygov.scot/carer-support-payment/effect-on-other-benefits",
+   "label": {
+    "en": "mygov.scot (Social Security Scotland), Carer Support Payment: Universal Credit and other income-related benefits"
+   }
+  },
+  "scotCspWork": {
+   "url": "https://www.mygov.scot/carer-support-payment/if-you-work",
+   "label": {
+    "en": "mygov.scot (Social Security Scotland), Carer Support Payment if you work (£204 a week)"
+   }
+  },
+  "govEsa": {
+   "url": "https://www.gov.uk/employment-support-allowance/what-youll-get",
+   "label": {
+    "en": "GOV.UK, Employment and Support Allowance: what you'll get"
+   }
+  },
+  "govEsaElig": {
+   "url": "https://www.gov.uk/employment-support-allowance/eligibility",
+   "label": {
+    "en": "GOV.UK, Employment and Support Allowance: eligibility"
+   }
+  },
+  "govEsaClaim": {
+   "url": "https://www.gov.uk/employment-support-allowance/your-esa-claim",
+   "label": {
+    "en": "GOV.UK, Employment and Support Allowance: your ESA claim (groups, 365-day limit)"
+   }
+  },
+  "govEsaWork": {
+   "url": "https://www.gov.uk/employment-support-allowance/working-while-you-claim",
+   "label": {
+    "en": "GOV.UK, Employment and Support Allowance: working while you claim"
+   }
+  },
+  "wrwa15": {
+   "url": "https://www.legislation.gov.uk/ukpga/2016/7/section/15",
+   "label": {
+    "en": "Welfare Reform and Work Act 2016, section 15 (ESA work-related activity component removed from 3 April 2017)"
+   }
+  },
+  "ucAct2025s1": {
+   "url": "https://www.legislation.gov.uk/ukpga/2025/22/section/1",
+   "label": {
+    "en": "Universal Credit Act 2025, section 1 (standard allowance: CPI plus an uplift, 2026-27 to 2029-30)"
+   }
+  },
+  "cpRegs48": {
+   "url": "https://www.legislation.gov.uk/uksi/2013/380/regulation/48",
+   "label": {
+    "en": "UC, PIP, JSA and ESA (Claims and Payments) Regulations 2013, regulation 48 (PIP paid four-weekly in arrears; weekly in advance for terminal illness)"
+   }
+  },
+  "cpRegs49": {
+   "url": "https://www.legislation.gov.uk/uksi/2013/380/regulation/49",
+   "label": {
+    "en": "UC, PIP, JSA and ESA (Claims and Payments) Regulations 2013, regulation 49 (PIP payday: the weekday of the decision)"
+   }
+  },
+  "cpRegs51": {
+   "url": "https://www.legislation.gov.uk/uksi/2013/380/regulation/51",
+   "label": {
+    "en": "UC, PIP, JSA and ESA (Claims and Payments) Regulations 2013, regulation 51 (ESA paid fortnightly in arrears, payday set by the last two digits of the NI number)"
+   }
   }
  },
  "carersCredit": {
@@ -946,5 +1824,153 @@
   ],
   "hoursPerWeek": 20,
   "breakWeeks": 12
+ },
+ "bankHolidays": {
+  "_src": [
+   "govBankHolidays"
+  ],
+  "retrieved_at": "2026-10-10",
+  "englandWales": [
+   "2026-01-01",
+   "2026-04-03",
+   "2026-04-06",
+   "2026-05-04",
+   "2026-05-25",
+   "2026-08-31",
+   "2026-12-25",
+   "2026-12-28",
+   "2027-01-01",
+   "2027-03-26",
+   "2027-03-29",
+   "2027-05-03",
+   "2027-05-31",
+   "2027-08-30",
+   "2027-12-27",
+   "2027-12-28"
+  ],
+  "scotland": [
+   "2026-01-01",
+   "2026-01-02",
+   "2026-04-03",
+   "2026-05-04",
+   "2026-05-25",
+   "2026-06-15",
+   "2026-08-03",
+   "2026-11-30",
+   "2026-12-25",
+   "2026-12-28",
+   "2027-01-01",
+   "2027-01-04",
+   "2027-03-26",
+   "2027-05-03",
+   "2027-05-31",
+   "2027-08-02",
+   "2027-11-30",
+   "2027-12-27",
+   "2027-12-28"
+  ],
+  "northernIreland": [
+   "2026-01-01",
+   "2026-03-17",
+   "2026-04-03",
+   "2026-04-06",
+   "2026-05-04",
+   "2026-05-25",
+   "2026-07-13",
+   "2026-08-31",
+   "2026-12-25",
+   "2026-12-28",
+   "2027-01-01",
+   "2027-03-17",
+   "2027-03-26",
+   "2027-03-29",
+   "2027-05-03",
+   "2027-05-31",
+   "2027-07-12",
+   "2027-08-30",
+   "2027-12-27",
+   "2027-12-28"
+  ]
+ },
+ "budgetingAdvance": {
+  "_src": [
+   "govUcAdvance"
+  ],
+  "min": 100,
+  "single": 348,
+  "couple": 464,
+  "children": 812,
+  "qualifyingMonths": 6,
+  "earningsLimit6m": 2600,
+  "earningsLimit6mCouple": 3600,
+  "repayMonths": 24,
+  "delayMonthsMax": 6
+ },
+ "costOfLiving": {
+  "_src": [
+   "govCostOfLiving"
+  ],
+  "lowIncome": [
+   [
+    "2022-07-14",
+    326
+   ],
+   [
+    "2022-11-08",
+    324
+   ],
+   [
+    "2023-04-25",
+    301
+   ],
+   [
+    "2023-10-31",
+    300
+   ],
+   [
+    "2024-02-06",
+    299
+   ]
+  ],
+  "disability": 150,
+  "disabilityCount": 2,
+  "pensionerLow": 150,
+  "pensionerHigh": 300,
+  "taxCreditMin": 26
+ },
+ "warmHomeDiscount": {
+  "_src": [
+   "govWhd"
+  ],
+  "amount": 150,
+  "qualifyingDate": "2026-08-23"
+ },
+ "tax": {
+  "_src": [
+   "govIncomeTax"
+  ],
+  "personalAllowance": 12570,
+  "basicRate": 0.2
+ },
+ "crf": {
+  "_src": [
+   "govCrf"
+  ],
+  "start": "2026-04-01",
+  "end": "2029-03-31"
+ },
+ "ni": {
+  "_src": [
+   "nidDiscretionary"
+  ],
+  "dsIncomeLimit": 29741.4,
+  "dsLoansPerYear": 3
+ },
+ "challenge": {
+  "mrMonths": 1,
+  "wsrDays": 14,
+  "_src": [
+   "govMr"
+  ]
  }
 }

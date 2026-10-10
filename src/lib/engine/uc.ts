@@ -7,6 +7,7 @@
 import { P, pence } from './params';
 import { lhaRate, type BedroomCat } from './lha';
 import { benefitCapMonthly } from './cap';
+import { childBenefitWeekly } from './family';
 
 const U = P.uc;
 export type Housing = 'none' | 'private' | 'social';
@@ -109,7 +110,8 @@ export function computeUc(i: UcInput): UcResult {
   award = award < U.minimumAward ? 0 : pence(award);
 
   // Benefit cap: not applied when exempt or when household earnings reach £881 a month.
-  const capLevel = benefitCapMonthly(i.couple || i.children > 0, !!i.london);
+  // The cap covers all counted benefits, Child Benefit included: UC is limited to the cap less Child Benefit.
+  const capLevel = pence(benefitCapMonthly(i.couple || i.children > 0, !!i.london) - (childBenefitWeekly(i.children) * 52) / 12);
   let capped = false;
   if (!i.capExempt && health === 'none' && !i.carer && i.earnings < P.benefitCap.earningsExemptMonthly && award > capLevel) { award = capLevel; capped = true; }
   return { award, maximum, elements, deductions, workAllowance, earningsDeduction, tariff, housing: h.amount, rentShortfall: h.shortfall, capped, capLevel, overCapital, ageing: '' };

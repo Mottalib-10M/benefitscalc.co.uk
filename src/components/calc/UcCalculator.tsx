@@ -55,7 +55,7 @@ export default function UcCalculator({ methodHref, compact = false }: { methodHr
         </div>
       </details>
       <div className="mt-6">
-        <ResultCard label="Universal Credit a month (estimate)" value={g(r.award)} sub={r.overCapital ? 'Savings above £16,000: no Universal Credit.' : r.capped ? `Limited by the benefit cap of ${g(r.capLevel)} a month.` : `Maximum before deductions ${g(r.maximum)}`} methodHref={methodHref}
+        <ResultCard label="Universal Credit a month (estimate)" value={g(r.award)} sub={r.overCapital ? 'Savings above £16,000: no Universal Credit.' : r.capped ? `Limited by the benefit cap: at most ${g(r.capLevel)} of UC once Child Benefit is counted.` : `Maximum before deductions ${g(r.maximum)}`} methodHref={methodHref}
           lines={[
             ...r.elements.map((e) => ({ label: e.label, value: g(e.amount), share: r.maximum ? e.amount / r.maximum : 0 })),
             ...r.deductions.map((d) => ({ label: `less ${d.label}`, value: `−${g(d.amount)}`, tone: 'red' as const, share: r.maximum ? d.amount / r.maximum : 0 })),
