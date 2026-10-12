@@ -21,7 +21,7 @@ export default function LhaTool({ methodHref }: { methodHref?: string }) {
   return (
     <Frame>
       <form className="grid gap-x-4 gap-y-4 sm:grid-cols-2" onSubmit={(e) => e.preventDefault()}>
-        <SelectField id="lha-area" label="Broad Rental Market Area" value={s.area} onChange={(v) => set('area', v)} options={AREAS} help="Your council’s housing benefit page names your BRMA" />
+        <SelectField id="lha-area" label="Broad Rental Market Area" value={s.area} onChange={(v) => set('area', v)} options={AREAS} help="Your council’s housing benefit page names your BRMA" className="sm:col-span-2" />
         <Toggle id="lha-hh" label="Household" value={s.hh} onChange={(v) => set('hh', v)} options={[{ value: 'single', label: 'Single' }, { value: 'couple', label: 'Couple' }]} />
         <NumberField id="lha-age" label="Your age" value={s.age} onChange={(v) => set('age', v)} unit="years" max={120} help="Single and under 35: shared room rate" />
         <NumberField id="lha-kids" label="Children living with you" value={s.kids} onChange={(v) => set('kids', v)} unit="children" max={15} />

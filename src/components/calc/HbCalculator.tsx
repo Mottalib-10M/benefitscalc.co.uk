@@ -17,7 +17,7 @@ export default function HbCalculator({ methodHref }: { methodHref?: string }) {
         <Toggle id="hb-late" label="State Pension age reached after 1 April 2021" value={s.late} onChange={(v) => set('late', v)} options={yes} />
         <NumberField id="hb-rent" label="Eligible rent a week" value={s.rent} onChange={(v) => set('rent', v)} unit="£" max={5000} decimals={2} help="Private rent: capped at the LHA rate" />
         <NumberField id="hb-inc" label="Weekly income" value={s.inc} onChange={(v) => set('inc', v)} unit="£" max={5000} decimals={2} help="Pensions, earnings, most benefits (not PIP or AA)" />
-        <NumberField id="hb-save" label="Savings" value={s.save} onChange={(v) => set('save', v)} unit="£" max={10000000} help="£10,000 ignored; over £16,000 no HB unless on Guarantee Credit" />
+        <NumberField id="hb-save" label="Savings" value={s.save} onChange={(v) => set('save', v)} unit="£" max={10000000} help="£10,000 ignored; over £16,000 no HB unless on Guarantee Credit" className="sm:col-span-2" />
         <Toggle id="hb-gc" label="You get Guarantee Credit" value={s.gc} onChange={(v) => set('gc', v)} options={yes} />
         <NumberField id="hb-nd" label="Non-dependant deductions a week" value={s.nd} onChange={(v) => set('nd', v)} unit="£" max={1000} decimals={2} help="£20.40 to £131.45 per adult living with you" />
       </form>

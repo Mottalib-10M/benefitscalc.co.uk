@@ -19,7 +19,7 @@ export default function PensionCreditCalculator({ methodHref }: { methodHref?: s
         <NumberField id="pc-inc" label="State Pension and other pensions a week" value={s.inc} onChange={(v) => set('inc', v)} unit="£" max={5000} decimals={2} help="Before tax; joint for a couple" />
         <NumberField id="pc-oth" label="Other weekly income counted" value={s.oth} onChange={(v) => set('oth', v)} unit="£" max={5000} decimals={2} help="Earnings, Carer’s Allowance. Not PIP, AA or Child Benefit" />
         <NumberField id="pc-save" label="Savings and investments" value={s.save} onChange={(v) => set('save', v)} unit="£" max={10000000} help="First £10,000 ignored, no upper limit" />
-        <SelectField id="pc-sd" label="Severe disability addition" value={s.sd} onChange={(v) => set('sd', v)} options={[{ value: '0', label: 'No' }, { value: '1', label: 'Yes (one person)' }, { value: '2', label: 'Yes (both of a couple)' }]} help="AA, PIP daily living or similar, no carer paid for you" />
+        <SelectField id="pc-sd" label="Severe disability addition" value={s.sd} onChange={(v) => set('sd', v)} options={[{ value: '0', label: 'No' }, { value: '1', label: 'Yes (one person)' }, { value: '2', label: 'Yes (both of a couple)' }]} help="AA, PIP daily living or similar, no carer paid for you" className="sm:col-span-2" />
         <Toggle id="pc-car" label="You get Carer’s Allowance" value={s.car} onChange={(v) => set('car', v)} options={yes} />
         <NumberField id="pc-kids" label="Children you are responsible for" value={s.kids} onChange={(v) => set('kids', v)} unit="children" max={10} />
         <Toggle id="pc-old" label="State Pension age reached before 6 April 2016" value={s.old} onChange={(v) => set('old', v)} options={yes} />

@@ -25,6 +25,9 @@ h1, h2, h3, h4 { hyphens: auto; overflow-wrap: break-word; }
 
 /* Rythme vertical (RECETTE §10.3) : le contenu ne touche jamais le calculateur. */
 .rechner { margin-bottom: 3rem; }
+/* Computer: the result column sits beside the fields, no top margin (first screen, 2026-10-11). */
+[data-outil].mb-4 > .rechner { margin-bottom: 0; }
+@media (min-width: 1024px) { .rechner-res > .mt-6, .rechner-res > div > .mt-6 { margin-top: 0; } }
 .prose .overflow-x-auto { margin-top: 1.75em; margin-bottom: 1.75em; } .prose .overflow-x-auto > table { margin-top: 0; margin-bottom: 0; }
 
 /* Aide d'un champ (RECETTE §10.3) : dans une rangée à deux champs, si le voisin de droite n'a pas
@@ -55,7 +58,9 @@ h1 { font-weight: 700; } h2 { font-weight: 650; } h3 { font-weight: 600; }
   .clamp-toggle { position: absolute; width: 1px; height: 1px; opacity: 0; }
   .clamp-toggle:checked ~ p .clamp-rest { display: inline; }
   .clamp-toggle:checked ~ .clamp-more { display: none; }
-  .clamp-more { display: inline-block; cursor: pointer; margin-top: 0.25rem; font-size: 0.875rem; font-weight: 600; color: #1e293b; text-decoration: underline; text-underline-offset: 3px; }
+  /* The link follows the last visible line instead of taking a line of its own (first screen, 2026-10-11). */
+  .clamp > p { display: inline; }
+  .clamp-more { display: inline-block; cursor: pointer; margin-left: 0.25rem; font-size: 0.875rem; font-weight: 600; color: #1e293b; text-decoration: underline; text-underline-offset: 3px; }
   .clamp-toggle:focus-visible ~ .clamp-more { outline: 2px solid #B0122C; outline-offset: 3px; }
   /* Result card: the one spectacular piece of the page (RECETTE §10.2). */
   .result-card { background: color-mix(in srgb, #B0122C 6%, white); border: 1px solid var(--color-accent-200); border-radius: .75rem; }

@@ -2,11 +2,11 @@
  * Home checker: one household, every benefit at once. Each line is computed by the engine of the full
  * calculator it links to (never a second calculation) and says what it assumes.
  */
-import { useMemo } from 'react';
+import { useMemo, useRef } from 'react';
 import NumberField from '../ui/NumberField';
 import SelectField from '../ui/SelectField';
 import Toggle from '../ui/Toggle';
-import { Actions, Frame, useUrlState } from './kit';
+import { Actions, Frame, StickyBar, useBelow, useUrlState } from './kit';
 import { computeUc } from '../../lib/engine/uc';
 import { computePensionCredit } from '../../lib/engine/pension';
 import { childBenefitWeekly, carersEarnings } from '../../lib/engine/family';
@@ -42,9 +42,11 @@ export default function BenefitsChecker({ links = {} }: { links?: Record<string,
   }, [s, couple, pension, links]);
   const total = rows.reduce((t, r) => t + r.amount, 0);
   const g = (n: number) => formatMoney(n);
+  const card = useRef<HTMLDivElement>(null);
+  const below = useBelow(card);
   return (
     <Frame>
-      <form className="grid gap-x-4 gap-y-4 sm:grid-cols-2 lg:grid-cols-3" onSubmit={(e) => e.preventDefault()}>
+      <form className="grid gap-x-4 gap-y-4 sm:grid-cols-2" onSubmit={(e) => e.preventDefault()}>
         <NumberField id="ck-age" label="Your age" value={s.age} onChange={(v) => set('age', v)} unit="years" max={120} help="66 or over: pension-age benefits" />
         <Toggle id="ck-hh" label="Household" value={s.hh} onChange={(v) => set('hh', v)} options={[{ value: 'single', label: 'Single' }, { value: 'couple', label: 'Couple' }]} />
         <NumberField id="ck-kids" label="Children" value={s.kids} onChange={(v) => set('kids', v)} unit="children" max={15} />
@@ -55,7 +57,8 @@ export default function BenefitsChecker({ links = {} }: { links?: Record<string,
         <Toggle id="ck-car" label="Caring 35 hours a week" value={s.car} onChange={(v) => set('car', v)} options={yes} />
         <SelectField id="ck-nat" label="Where you live" value={s.nat} onChange={(v) => set('nat', v)} options={[{ value: 'england', label: 'England' }, { value: 'wales', label: 'Wales' }, { value: 'scotland', label: 'Scotland' }, { value: 'ni', label: 'Northern Ireland' }]} />
       </form>
-      <div aria-live="polite" className="result-card mt-6 p-5">
+      <div className="mt-6">
+      <div ref={card} aria-live="polite" data-resultat className="result-card p-5">
         <p className="text-sm font-medium text-navy-700">Estimated benefits a month, 2026/27</p>
         <p className="tabular-nums mt-1 text-4xl font-bold text-navy-900">{g(total)}</p>
         <table className="mt-4 w-full text-sm"><tbody>
@@ -67,7 +70,9 @@ export default function BenefitsChecker({ links = {} }: { links?: Record<string,
           ))}
         </tbody></table>
       </div>
+      <StickyBar show={below} label="Estimated benefits a month, 2026/27" value={g(total)} target={card} />
       <Actions summary={() => `Benefits estimate: ${g(total)} a month (2026/27).`} />
+      </div>
     </Frame>
   );
 }

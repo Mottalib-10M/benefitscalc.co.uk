@@ -3,7 +3,7 @@
  * share link, print) and the URL-state hook. Hydration rule (RECETTE §17.5): the first render uses
  * the build defaults only; the shared link is read in an effect after mount.
  */
-import { useEffect, useRef, useState, type ReactNode } from 'react';
+import { Children, useEffect, useRef, useState, type ReactNode, type RefObject } from 'react';
 import { readParams, updateURL } from '../../lib/url-state';
 import { isISO } from '../../lib/engine/dates';
 
@@ -19,9 +19,34 @@ export function DateField({ id, label, value, onChange, help, className = '' }: 
 }
 
 export interface Line { label: string; value: string; share?: number; strong?: boolean; tone?: 'red' }
-export function ResultCard({ label, value, sub, lines = [], note, methodHref, children }: { label: string; value: string; sub?: string; lines?: Line[]; note?: ReactNode; methodHref?: string; children?: ReactNode }) {
+/** Phone: while the result card is below the screen, a bar pinned to the bottom shows the key figure (RECETTE §5, 2026-10-11). Added on the client only. */
+export function useBelow(ref: RefObject<HTMLElement | null>) {
+  const [below, setBelow] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el || typeof IntersectionObserver === 'undefined') return;
+    const io = new IntersectionObserver(([e]) => setBelow(!e.isIntersecting && e.boundingClientRect.top > 0));
+    io.observe(el);
+    return () => io.disconnect();
+  }, [ref]);
+  return below;
+}
+export function StickyBar({ show, label, value, target }: { show: boolean; label: string; value: string; target: RefObject<HTMLElement | null> }) {
+  if (!show) return null;
   return (
-    <div aria-live="polite" className="result-card p-5">
+    <button type="button" aria-hidden="true" tabIndex={-1} onClick={() => target.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
+      className="no-print fixed inset-x-0 bottom-0 z-40 flex items-baseline justify-between gap-3 border-t border-accent-200 bg-accent-50 px-4 py-3 text-left shadow-lg lg:hidden">
+      <span className="text-sm font-medium text-navy-700">{label}</span>
+      <span className="tabular-nums text-xl font-bold text-navy-900">{value}</span>
+    </button>
+  );
+}
+
+export function ResultCard({ label, value, sub, lines = [], note, methodHref, children }: { label: string; value: string; sub?: string; lines?: Line[]; note?: ReactNode; methodHref?: string; children?: ReactNode }) {
+  const card = useRef<HTMLDivElement>(null);
+  const below = useBelow(card);
+  return (
+    <div ref={card} aria-live="polite" data-resultat className="result-card p-5">
       <p className="text-sm font-medium text-navy-700">{label}</p>
       <p className="tabular-nums mt-1 text-4xl font-bold text-navy-900">{value}</p>
       {sub && <p className="mt-1 text-sm text-navy-700">{sub}</p>}
@@ -38,6 +63,7 @@ export function ResultCard({ label, value, sub, lines = [], note, methodHref, ch
       {children}
       {note && <div className="mt-3 text-xs text-navy-600">{note}</div>}
       {methodHref && <p className="mt-3 text-xs"><a href={methodHref} className="font-medium text-accent-700 underline">How this is calculated</a></p>}
+      <StickyBar show={below} label={label} value={value} target={card} />
     </div>
   );
 }
@@ -78,4 +104,14 @@ export function useUrlState<T extends Record<string, Val>>(defaults: T): [T, <K 
   return [s, set];
 }
 
-export const Frame = ({ children }: { children: ReactNode }) => <div className="rechner rounded-xl border border-navy-200 bg-white p-4 sm:p-6">{children}</div>;
+/** Calculator frame. Computer: fields on the left, the last child (the result) on the right, kept in view while the fields scroll (RECETTE §5, 2026-10-11). */
+export const Frame = ({ children }: { children: ReactNode }) => {
+  const items = Children.toArray(children);
+  const result = items.pop();
+  return (
+    <div className="rechner rounded-xl border border-navy-200 bg-white p-4 sm:p-6 lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-6">
+      <div className="min-w-0">{items}</div>
+      <div className="rechner-res min-w-0 lg:sticky lg:top-20">{result}</div>
+    </div>
+  );
+};
