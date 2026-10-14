@@ -46,7 +46,7 @@ export default function BenefitsChecker({ links = {} }: { links?: Record<string,
   const below = useBelow(card);
   return (
     <Frame>
-      <form className="grid gap-x-4 gap-y-4 sm:grid-cols-2" onSubmit={(e) => e.preventDefault()}>
+      <form className="grid content-start gap-x-4 gap-y-4 sm:grid-cols-2" onSubmit={(e) => e.preventDefault()}>
         <NumberField id="ck-age" label="Your age" value={s.age} onChange={(v) => set('age', v)} unit="years" max={120} help="66 or over: pension-age benefits" />
         <Toggle id="ck-hh" label="Household" value={s.hh} onChange={(v) => set('hh', v)} options={[{ value: 'single', label: 'Single' }, { value: 'couple', label: 'Couple' }]} />
         <NumberField id="ck-kids" label="Children" value={s.kids} onChange={(v) => set('kids', v)} unit="children" max={15} />

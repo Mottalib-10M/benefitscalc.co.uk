@@ -26,7 +26,7 @@ export default function UcCalculator({ methodHref, compact = false }: { methodHr
   const summary = () => `Universal Credit estimate: ${g(r.award)} a month (2026/27 rates).`;
   return (
     <Frame>
-      <form className="grid gap-x-4 gap-y-4 sm:grid-cols-2" onSubmit={(e) => e.preventDefault()}>
+      <form className="grid content-start gap-x-4 gap-y-4 sm:grid-cols-2" onSubmit={(e) => e.preventDefault()}>
         <Toggle id="uc-hh" label="Who is claiming" value={s.hh} onChange={(v) => set('hh', v)} options={[{ value: 'single', label: 'Just me' }, { value: 'couple', label: 'Couple' }]} />
         <NumberField id="uc-age" label={couple ? 'Age of the older partner' : 'Your age'} value={s.age} onChange={(v) => { set('age', v); set('page', v); }} unit="years" max={120} help="25 or over raises the standard allowance" />
         <NumberField id="uc-kids" label="Children living with you" value={s.kids} onChange={(v) => set('kids', v)} unit="children" max={15} help="Every child counts since 6 April 2026" />

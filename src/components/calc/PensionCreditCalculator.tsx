@@ -14,7 +14,7 @@ export default function PensionCreditCalculator({ methodHref }: { methodHref?: s
   const g = (n: number, d = 2) => formatMoney(n, d);
   return (
     <Frame>
-      <form className="grid gap-x-4 gap-y-4 sm:grid-cols-2" onSubmit={(e) => e.preventDefault()}>
+      <form className="grid content-start gap-x-4 gap-y-4 sm:grid-cols-2" onSubmit={(e) => e.preventDefault()}>
         <Toggle id="pc-hh" label="Household" value={s.hh} onChange={(v) => set('hh', v)} options={[{ value: 'single', label: 'Single' }, { value: 'couple', label: 'Couple' }]} />
         <NumberField id="pc-inc" label="State Pension and other pensions a week" value={s.inc} onChange={(v) => set('inc', v)} unit="£" max={5000} decimals={2} help="Before tax; joint for a couple" />
         <NumberField id="pc-oth" label="Other weekly income counted" value={s.oth} onChange={(v) => set('oth', v)} unit="£" max={5000} decimals={2} help="Earnings, Carer’s Allowance. Not PIP, AA or Child Benefit" />

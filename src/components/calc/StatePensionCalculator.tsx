@@ -12,7 +12,7 @@ export default function StatePensionCalculator({ methodHref }: { methodHref?: st
   const missing = Math.max(0, P.statePension.qualifyingYearsFull - s.yrs);
   return (
     <Frame>
-      <form className="grid gap-x-4 gap-y-4 sm:grid-cols-2" onSubmit={(e) => e.preventDefault()}>
+      <form className="grid content-start gap-x-4 gap-y-4 sm:grid-cols-2" onSubmit={(e) => e.preventDefault()}>
         <NumberField id="sp-yrs" label="Qualifying years on your NI record" value={s.yrs} onChange={(v) => set('yrs', v)} unit="years" max={60} help="Your forecast on GOV.UK shows them" />
         <NumberField id="sp-def" label="Weeks you put off claiming" value={s.def} onChange={(v) => set('def', v)} unit="weeks" max={520} help="9 weeks minimum for an increase" />
       </form>

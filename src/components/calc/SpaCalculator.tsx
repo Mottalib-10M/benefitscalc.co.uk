@@ -15,7 +15,7 @@ export default function SpaCalculator({ methodHref }: { methodHref?: string }) {
   const d = (iso: string) => displayDate(iso, 'en-GB');
   return (
     <Frame>
-      <form className="grid gap-x-4 gap-y-4 sm:grid-cols-2" onSubmit={(e) => e.preventDefault()}>
+      <form className="grid content-start gap-x-4 gap-y-4 sm:grid-cols-2" onSubmit={(e) => e.preventDefault()}>
         <DateField id="spa-dob" label="Date of birth" value={s.dob} onChange={(v) => set('dob', v)} help="Same rule for men and women since November 2018" />
       </form>
       <div className="mt-6">

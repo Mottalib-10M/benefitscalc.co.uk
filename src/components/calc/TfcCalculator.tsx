@@ -11,7 +11,7 @@ export default function TfcCalculator({ methodHref }: { methodHref?: string }) {
   const g = (n: number, d = 0) => formatMoney(n, d);
   return (
     <Frame>
-      <form className="grid gap-x-4 gap-y-4 sm:grid-cols-2" onSubmit={(e) => e.preventDefault()}>
+      <form className="grid content-start gap-x-4 gap-y-4 sm:grid-cols-2" onSubmit={(e) => e.preventDefault()}>
         <NumberField id="tfc-cost" label="Childcare bill a month" value={s.cost} onChange={(v) => set('cost', v)} unit="£" max={20000} help="Registered or approved provider" />
         <NumberField id="tfc-kids" label="Children in childcare" value={s.kids} onChange={(v) => set('kids', v)} unit="children" max={10} help="Up to 11, or 16 if disabled" />
         <NumberField id="tfc-dis" label="Of whom disabled" value={s.dis} onChange={(v) => set('dis', v)} unit="children" max={10} />

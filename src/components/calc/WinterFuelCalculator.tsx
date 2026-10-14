@@ -13,7 +13,7 @@ export default function WinterFuelCalculator({ methodHref }: { methodHref?: stri
   const g = (n: number) => formatMoney(n);
   return (
     <Frame>
-      <form className="grid gap-x-4 gap-y-4 sm:grid-cols-2" onSubmit={(e) => e.preventDefault()}>
+      <form className="grid content-start gap-x-4 gap-y-4 sm:grid-cols-2" onSubmit={(e) => e.preventDefault()}>
         <DateField id="wf-dob" label="Your date of birth" value={s.dob} onChange={(v) => set('dob', v)} help="On or before 27 June 1960 to qualify" />
         <SelectField id="wf-liv" label="During 21 to 27 September 2026" value={s.liv} onChange={(v) => set('liv', v)} options={[
           { value: 'alone', label: 'I lived alone, or with no one eligible' },

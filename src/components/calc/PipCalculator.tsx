@@ -18,9 +18,9 @@ export default function PipCalculator({ methodHref }: { methodHref?: string }) {
   return (
     <Frame>
       <p className="mb-3 text-sm font-semibold text-navy-800">Daily living activities</p>
-      <form className="grid gap-x-4 gap-y-4 sm:grid-cols-2" onSubmit={(e) => e.preventDefault()}>{block('daily')}</form>
+      <form className="grid content-start gap-x-4 gap-y-4 sm:grid-cols-2" onSubmit={(e) => e.preventDefault()}>{block('daily')}</form>
       <p className="mb-3 mt-6 text-sm font-semibold text-navy-800">Mobility activities</p>
-      <form className="grid gap-x-4 gap-y-4 sm:grid-cols-2" onSubmit={(e) => e.preventDefault()}>{block('mobility')}</form>
+      <form className="grid content-start gap-x-4 gap-y-4 sm:grid-cols-2" onSubmit={(e) => e.preventDefault()}>{block('mobility')}</form>
       <div className="mt-6">
         <ResultCard label="PIP a week if the assessment agrees" value={g(r.weekly)} sub={`${formatMoney(r.fourWeekly, 2)} every 4 weeks`} methodHref={methodHref}
           lines={[

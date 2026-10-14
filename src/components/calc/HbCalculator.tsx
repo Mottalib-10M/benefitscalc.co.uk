@@ -12,7 +12,7 @@ export default function HbCalculator({ methodHref }: { methodHref?: string }) {
   const g = (n: number) => formatMoney(n, 2);
   return (
     <Frame>
-      <form className="grid gap-x-4 gap-y-4 sm:grid-cols-2" onSubmit={(e) => e.preventDefault()}>
+      <form className="grid content-start gap-x-4 gap-y-4 sm:grid-cols-2" onSubmit={(e) => e.preventDefault()}>
         <Toggle id="hb-hh" label="Household" value={s.hh} onChange={(v) => set('hh', v)} options={[{ value: 'single', label: 'Single' }, { value: 'couple', label: 'Couple' }]} />
         <Toggle id="hb-late" label="State Pension age reached after 1 April 2021" value={s.late} onChange={(v) => set('late', v)} options={yes} />
         <NumberField id="hb-rent" label="Eligible rent a week" value={s.rent} onChange={(v) => set('rent', v)} unit="£" max={5000} decimals={2} help="Private rent: capped at the LHA rate" />

@@ -14,7 +14,7 @@ export default function CarersCalculator({ methodHref }: { methodHref?: string }
   const g = (n: number) => formatMoney(n, 2);
   return (
     <Frame>
-      <form className="grid gap-x-4 gap-y-4 sm:grid-cols-2" onSubmit={(e) => e.preventDefault()}>
+      <form className="grid content-start gap-x-4 gap-y-4 sm:grid-cols-2" onSubmit={(e) => e.preventDefault()}>
         <NumberField id="ca-net" label="Weekly earnings after tax and NI" value={s.net} onChange={(v) => set('net', v)} unit="£" max={10000} decimals={2} help="Average over your pay period" />
         <NumberField id="ca-pen" label="Your pension contributions a week" value={s.pen} onChange={(v) => set('pen', v)} unit="£" max={2000} decimals={2} help="Half of them is deducted" />
         <NumberField id="ca-care" label="Paid care while you work, a week" value={s.care} onChange={(v) => set('care', v)} unit="£" max={2000} decimals={2} help="Up to half your earnings; not a close relative" />

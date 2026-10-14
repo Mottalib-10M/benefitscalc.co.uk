@@ -13,7 +13,7 @@ export default function CapCalculator({ methodHref }: { methodHref?: string }) {
   const g = (n: number, d = 2) => formatMoney(n, d);
   return (
     <Frame>
-      <form className="grid gap-x-4 gap-y-4 sm:grid-cols-2" onSubmit={(e) => e.preventDefault()}>
+      <form className="grid content-start gap-x-4 gap-y-4 sm:grid-cols-2" onSubmit={(e) => e.preventDefault()}>
         <Toggle id="cap-fam" label="Couple, or children living with you" value={s.fam} onChange={(v) => set('fam', v)} options={yes} />
         <Toggle id="cap-lon" label="Greater London" value={s.lon} onChange={(v) => set('lon', v)} options={yes} />
         <NumberField id="cap-ben" label="Benefits that count, a month" value={s.ben} onChange={(v) => set('ben', v)} unit="£" max={20000} help="UC (with housing), Child Benefit, New Style JSA or ESA" />

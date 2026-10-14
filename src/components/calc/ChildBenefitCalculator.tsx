@@ -11,7 +11,7 @@ export default function ChildBenefitCalculator({ methodHref }: { methodHref?: st
   const g = (n: number, d = 0) => formatMoney(n, d);
   return (
     <Frame>
-      <form className="grid gap-x-4 gap-y-4 sm:grid-cols-2" onSubmit={(e) => e.preventDefault()}>
+      <form className="grid content-start gap-x-4 gap-y-4 sm:grid-cols-2" onSubmit={(e) => e.preventDefault()}>
         <NumberField id="cb-kids" label="Children you claim for" value={s.kids} onChange={(v) => set('kids', v)} unit="children" max={15} help="Under 16, or under 20 in approved education" />
         <NumberField id="cb-inc" label="Higher earner’s adjusted net income" value={s.inc} onChange={(v) => set('inc', v)} unit="£" max={10000000} help="A year, before personal allowance, after pension contributions" />
       </form>
